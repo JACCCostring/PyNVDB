@@ -1,0 +1,13 @@
+{
+    "catalog_version": 2.39,
+    "catalog_path": "resources/datacatalog.json",
+    "communities_path": "resources/communities.json",
+    "counties_path": "resources/counties.json",
+    "test_headers": {
+        "X-Client": "STDTest-Client"
+    },
+    "endpoints": {
+        "prod": "https://nvdbapiles-v3.atlas.vegvesen.no/",
+        "test": "https://nvdbapiles-v3.test.atlas.vegvesen.no/"
+    }
+}

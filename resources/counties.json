@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1018337096,
+        "navn": "Akershus",
+        "nummer": 32,
+        "organisasjonsnummer": 930580783
+    },
+    {
+        "id": 1018337097,
+        "navn": "Buskerud",
+        "nummer": 33,
+        "organisasjonsnummer": 930580260
+    },
+    {
+        "id": 1006202690,
+        "navn": "Innlandet",
+        "nummer": 34,
+        "organisasjonsnummer": 920717152
+    },
+    {
+        "id": 1002101863,
+        "navn": "Oslo",
+        "nummer": 3,
+        "organisasjonsnummer": 958935420
+    },
+    {
+        "id": 1018337098,
+        "navn": "Vestfold",
+        "nummer": 39,
+        "organisasjonsnummer": 929882385
+    },
+    {
+        "id": 1018337099,
+        "navn": "Telemark",
+        "nummer": 40,
+        "organisasjonsnummer": 929882989
+    },
+    {
+        "id": 1006202692,
+        "navn": "Agder",
+        "nummer": 42,
+        "organisasjonsnummer": 921707134
+    },
+    {
+        "id": 1002101871,
+        "navn": "Rogaland",
+        "nummer": 11,
+        "organisasjonsnummer": 971045698
+    },
+    {
+        "id": 1006202693,
+        "navn": "Vestland",
+        "nummer": 46,
+        "organisasjonsnummer": 821311632
+    },
+    {
+        "id": 1002101874,
+        "navn": "M\u00f8re og Romsdal",
+        "nummer": 15,
+        "organisasjonsnummer": 944183779
+    },
+    {
+        "id": 1002101878,
+        "navn": "Tr\u00f8ndelag",
+        "nummer": 50,
+        "organisasjonsnummer": 817920632
+    },
+    {
+        "id": 1002101875,
+        "navn": "Nordland",
+        "nummer": 18,
+        "organisasjonsnummer": 964982953
+    },
+    {
+        "id": 1018337100,
+        "navn": "Troms",
+        "nummer": 55,
+        "organisasjonsnummer": 930068128
+    },
+    {
+        "id": 1018337101,
+        "navn": "Finnmark",
+        "nummer": 56,
+        "organisasjonsnummer": 830090282
+    },
+    {
+        "id": 1018337095,
+        "navn": "\u00d8stfold",
+        "nummer": 31,
+        "organisasjonsnummer": 930580694
+    }
+]

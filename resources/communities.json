@@ -1,0 +1,2501 @@
+[
+    {
+        "id": 1002101859,
+        "navn": "B\u00e5tsfjord",
+        "nummer": 5632,
+        "fylke": 56,
+        "organisasjonsnummer": 938795592
+    },
+    {
+        "id": 1002101842,
+        "navn": "Vard\u00f8",
+        "nummer": 5634,
+        "fylke": 56,
+        "organisasjonsnummer": 972418048
+    },
+    {
+        "id": 1002101633,
+        "navn": "Etne",
+        "nummer": 4611,
+        "fylke": 46,
+        "organisasjonsnummer": 959435375
+    },
+    {
+        "id": 1002101711,
+        "navn": "Rauma",
+        "nummer": 1539,
+        "fylke": 15,
+        "organisasjonsnummer": 864980902
+    },
+    {
+        "id": 1002101634,
+        "navn": "Sveio",
+        "nummer": 4612,
+        "fylke": 46,
+        "organisasjonsnummer": 864967272
+    },
+    {
+        "id": 1002101858,
+        "navn": "Unj\u00e0rga-Nesseby",
+        "nummer": 5636,
+        "fylke": 56,
+        "organisasjonsnummer": 839953062
+    },
+    {
+        "id": 1002101635,
+        "navn": "B\u00f8mlo",
+        "nummer": 4613,
+        "fylke": 46,
+        "organisasjonsnummer": 834210622
+    },
+    {
+        "id": 1002101636,
+        "navn": "Stord",
+        "nummer": 4614,
+        "fylke": 46,
+        "organisasjonsnummer": 939866914
+    },
+    {
+        "id": 1002101637,
+        "navn": "Fitjar",
+        "nummer": 4615,
+        "fylke": 46,
+        "organisasjonsnummer": 944073310
+    },
+    {
+        "id": 1002101638,
+        "navn": "Tysnes",
+        "nummer": 4616,
+        "fylke": 46,
+        "organisasjonsnummer": 959412340
+    },
+    {
+        "id": 1002101639,
+        "navn": "Kvinnherad",
+        "nummer": 4617,
+        "fylke": 46,
+        "organisasjonsnummer": 964967636
+    },
+    {
+        "id": 1006202711,
+        "navn": "Ullensvang",
+        "nummer": 4618,
+        "fylke": 46,
+        "organisasjonsnummer": 920500633
+    },
+    {
+        "id": 1002101715,
+        "navn": "Aukra",
+        "nummer": 1547,
+        "fylke": 15,
+        "organisasjonsnummer": 964981337
+    },
+    {
+        "id": 1002101643,
+        "navn": "Eidfjord",
+        "nummer": 4619,
+        "fylke": 46,
+        "organisasjonsnummer": 944227121
+    },
+    {
+        "id": 1002101644,
+        "navn": "Ulvik",
+        "nummer": 4620,
+        "fylke": 46,
+        "organisasjonsnummer": 971159928
+    },
+    {
+        "id": 1006202712,
+        "navn": "Voss",
+        "nummer": 4621,
+        "fylke": 46,
+        "organisasjonsnummer": 960510542
+    },
+    {
+        "id": 1002101647,
+        "navn": "Kvam",
+        "nummer": 4622,
+        "fylke": 46,
+        "organisasjonsnummer": 944233199
+    },
+    {
+        "id": 1002101649,
+        "navn": "Samnanger",
+        "nummer": 4623,
+        "fylke": 46,
+        "organisasjonsnummer": 964968985
+    },
+    {
+        "id": 1006202713,
+        "navn": "Bj\u00f8rnafjorden",
+        "nummer": 4624,
+        "fylke": 46,
+        "organisasjonsnummer": 844458312
+    },
+    {
+        "id": 1002101651,
+        "navn": "Austevoll",
+        "nummer": 4625,
+        "fylke": 46,
+        "organisasjonsnummer": 941139787
+    },
+    {
+        "id": 1002101718,
+        "navn": "Aver\u00f8y",
+        "nummer": 1554,
+        "fylke": 15,
+        "organisasjonsnummer": 962378064
+    },
+    {
+        "id": 1006202714,
+        "navn": "\u00d8ygarden",
+        "nummer": 4626,
+        "fylke": 46,
+        "organisasjonsnummer": 922530890
+    },
+    {
+        "id": 1002101654,
+        "navn": "Ask\u00f8y",
+        "nummer": 4627,
+        "fylke": 46,
+        "organisasjonsnummer": 964338442
+    },
+    {
+        "id": 1002101655,
+        "navn": "Vaksdal",
+        "nummer": 4628,
+        "fylke": 46,
+        "organisasjonsnummer": 961821967
+    },
+    {
+        "id": 1002101719,
+        "navn": "Gjemnes",
+        "nummer": 1557,
+        "fylke": 15,
+        "organisasjonsnummer": 964981426
+    },
+    {
+        "id": 1002101656,
+        "navn": "Modalen",
+        "nummer": 4629,
+        "fylke": 46,
+        "organisasjonsnummer": 964969302
+    },
+    {
+        "id": 1002101657,
+        "navn": "Oster\u00f8y",
+        "nummer": 4630,
+        "fylke": 46,
+        "organisasjonsnummer": 864338712
+    },
+    {
+        "id": 1006202715,
+        "navn": "Alver",
+        "nummer": 4631,
+        "fylke": 46,
+        "organisasjonsnummer": 920290922
+    },
+    {
+        "id": 1002101720,
+        "navn": "Tingvoll",
+        "nummer": 1560,
+        "fylke": 15,
+        "organisasjonsnummer": 964981515
+    },
+    {
+        "id": 1002101662,
+        "navn": "Austrheim",
+        "nummer": 4632,
+        "fylke": 46,
+        "organisasjonsnummer": 948350823
+    },
+    {
+        "id": 1002101663,
+        "navn": "Fedje",
+        "nummer": 4633,
+        "fylke": 46,
+        "organisasjonsnummer": 944041036
+    },
+    {
+        "id": 1002101664,
+        "navn": "Masfjorden",
+        "nummer": 4634,
+        "fylke": 46,
+        "organisasjonsnummer": 945627913
+    },
+    {
+        "id": 1002101721,
+        "navn": "Sunndal",
+        "nummer": 1563,
+        "fylke": 15,
+        "organisasjonsnummer": 964981604
+    },
+    {
+        "id": 1002101666,
+        "navn": "Gulen",
+        "nummer": 4635,
+        "fylke": 46,
+        "organisasjonsnummer": 938497524
+    },
+    {
+        "id": 1002101667,
+        "navn": "Solund",
+        "nummer": 4636,
+        "fylke": 46,
+        "organisasjonsnummer": 964967458
+    },
+    {
+        "id": 1002101668,
+        "navn": "Hyllestad",
+        "nummer": 4637,
+        "fylke": 46,
+        "organisasjonsnummer": 964967547
+    },
+    {
+        "id": 1002101439,
+        "navn": "Halden",
+        "nummer": 3101,
+        "fylke": 31,
+        "organisasjonsnummer": 959159092
+    },
+    {
+        "id": 1002101669,
+        "navn": "H\u00f8yanger",
+        "nummer": 4638,
+        "fylke": 46,
+        "organisasjonsnummer": 944439838
+    },
+    {
+        "id": 1002101722,
+        "navn": "Surnadal",
+        "nummer": 1566,
+        "fylke": 15,
+        "organisasjonsnummer": 964981892
+    },
+    {
+        "id": 1002101670,
+        "navn": "Vik",
+        "nummer": 4639,
+        "fylke": 46,
+        "organisasjonsnummer": 937498764
+    },
+    {
+        "id": 1006202695,
+        "navn": "Moss",
+        "nummer": 3103,
+        "fylke": 31,
+        "organisasjonsnummer": 920817521
+    },
+    {
+        "id": 1006202716,
+        "navn": "Sogndal",
+        "nummer": 4640,
+        "fylke": 46,
+        "organisasjonsnummer": 922121893
+    },
+    {
+        "id": 1002101441,
+        "navn": "Sarpsborg",
+        "nummer": 3105,
+        "fylke": 31,
+        "organisasjonsnummer": 938801363
+    },
+    {
+        "id": 1002101674,
+        "navn": "Aurland",
+        "nummer": 4641,
+        "fylke": 46,
+        "organisasjonsnummer": 964968063
+    },
+    {
+        "id": 1002101675,
+        "navn": "L\u00e6rdal",
+        "nummer": 4642,
+        "fylke": 46,
+        "organisasjonsnummer": 954681890
+    },
+    {
+        "id": 1002101676,
+        "navn": "\u00c5rdal",
+        "nummer": 4643,
+        "fylke": 46,
+        "organisasjonsnummer": 954679721
+    },
+    {
+        "id": 1002101442,
+        "navn": "Fredrikstad",
+        "nummer": 3107,
+        "fylke": 31,
+        "organisasjonsnummer": 940039541
+    },
+    {
+        "id": 1002101677,
+        "navn": "Luster",
+        "nummer": 4644,
+        "fylke": 46,
+        "organisasjonsnummer": 964968241
+    },
+    {
+        "id": 1002101725,
+        "navn": "Sm\u00f8la",
+        "nummer": 1573,
+        "fylke": 15,
+        "organisasjonsnummer": 945012986
+    },
+    {
+        "id": 1002101678,
+        "navn": "Askvoll",
+        "nummer": 4645,
+        "fylke": 46,
+        "organisasjonsnummer": 964968330
+    },
+    {
+        "id": 1002101679,
+        "navn": "Fjaler",
+        "nummer": 4646,
+        "fylke": 46,
+        "organisasjonsnummer": 864968422
+    },
+    {
+        "id": 1002101443,
+        "navn": "Hvaler",
+        "nummer": 3110,
+        "fylke": 31,
+        "organisasjonsnummer": 964947082
+    },
+    {
+        "id": 1006202717,
+        "navn": "Sunnfjord",
+        "nummer": 4647,
+        "fylke": 46,
+        "organisasjonsnummer": 921244207
+    },
+    {
+        "id": 1002101726,
+        "navn": "Aure",
+        "nummer": 1576,
+        "fylke": 15,
+        "organisasjonsnummer": 988913898
+    },
+    {
+        "id": 1002101684,
+        "navn": "Bremanger",
+        "nummer": 4648,
+        "fylke": 46,
+        "organisasjonsnummer": 959318166
+    },
+    {
+        "id": 1002101453,
+        "navn": "R\u00e5de",
+        "nummer": 3112,
+        "fylke": 31,
+        "organisasjonsnummer": 940802652
+    },
+    {
+        "id": 1006202721,
+        "navn": "Volda",
+        "nummer": 1577,
+        "fylke": 15,
+        "organisasjonsnummer": 939760946
+    },
+    {
+        "id": 1006202718,
+        "navn": "Stad",
+        "nummer": 4649,
+        "fylke": 46,
+        "organisasjonsnummer": 921060157
+    },
+    {
+        "id": 1002101455,
+        "navn": "V\u00e5ler",
+        "nummer": 3114,
+        "fylke": 31,
+        "organisasjonsnummer": 959272581
+    },
+    {
+        "id": 1006202722,
+        "navn": "Fjord",
+        "nummer": 1578,
+        "fylke": 15,
+        "organisasjonsnummer": 921891687
+    },
+    {
+        "id": 1002101689,
+        "navn": "Gloppen",
+        "nummer": 4650,
+        "fylke": 46,
+        "organisasjonsnummer": 964969124
+    },
+    {
+        "id": 1006202723,
+        "navn": "Hustadvika",
+        "nummer": 1579,
+        "fylke": 15,
+        "organisasjonsnummer": 921133642
+    },
+    {
+        "id": 1002101690,
+        "navn": "Stryn",
+        "nummer": 4651,
+        "fylke": 46,
+        "organisasjonsnummer": 963989202
+    },
+    {
+        "id": 1018337094,
+        "navn": "Haram",
+        "nummer": 1580,
+        "fylke": 15,
+        "organisasjonsnummer": 829912252
+    },
+    {
+        "id": 1002101451,
+        "navn": "Skiptvet",
+        "nummer": 3116,
+        "fylke": 31,
+        "organisasjonsnummer": 941962726
+    },
+    {
+        "id": 1006202697,
+        "navn": "Indre \u00d8stfold",
+        "nummer": 3118,
+        "fylke": 31,
+        "organisasjonsnummer": 920123899
+    },
+    {
+        "id": 1002101452,
+        "navn": "Rakkestad",
+        "nummer": 3120,
+        "fylke": 31,
+        "organisasjonsnummer": 945372281
+    },
+    {
+        "id": 1002101445,
+        "navn": "Marker",
+        "nummer": 3122,
+        "fylke": 31,
+        "organisasjonsnummer": 964944334
+    },
+    {
+        "id": 1002101444,
+        "navn": "Aremark",
+        "nummer": 3124,
+        "fylke": 31,
+        "organisasjonsnummer": 940875560
+    },
+    {
+        "id": 1002101606,
+        "navn": "Eigersund",
+        "nummer": 1101,
+        "fylke": 11,
+        "organisasjonsnummer": 944496394
+    },
+    {
+        "id": 1006202708,
+        "navn": "Stavanger",
+        "nummer": 1103,
+        "fylke": 11,
+        "organisasjonsnummer": 964965226
+    },
+    {
+        "id": 1002101609,
+        "navn": "Haugesund",
+        "nummer": 1106,
+        "fylke": 11,
+        "organisasjonsnummer": 944073787
+    },
+    {
+        "id": 1006202709,
+        "navn": "Sandnes",
+        "nummer": 1108,
+        "fylke": 11,
+        "organisasjonsnummer": 964965137
+    },
+    {
+        "id": 1002101610,
+        "navn": "Sokndal",
+        "nummer": 1111,
+        "fylke": 11,
+        "organisasjonsnummer": 964965692
+    },
+    {
+        "id": 1002101611,
+        "navn": "Lund",
+        "nummer": 1112,
+        "fylke": 11,
+        "organisasjonsnummer": 964966486
+    },
+    {
+        "id": 1002101612,
+        "navn": "Bjerkreim",
+        "nummer": 1114,
+        "fylke": 11,
+        "organisasjonsnummer": 970490361
+    },
+    {
+        "id": 1002101613,
+        "navn": "H\u00e5",
+        "nummer": 1119,
+        "fylke": 11,
+        "organisasjonsnummer": 964969590
+    },
+    {
+        "id": 1002101614,
+        "navn": "Klepp",
+        "nummer": 1120,
+        "fylke": 11,
+        "organisasjonsnummer": 864969682
+    },
+    {
+        "id": 1002101615,
+        "navn": "Time",
+        "nummer": 1121,
+        "fylke": 11,
+        "organisasjonsnummer": 859223672
+    },
+    {
+        "id": 1002101616,
+        "navn": "Gjesdal",
+        "nummer": 1122,
+        "fylke": 11,
+        "organisasjonsnummer": 964978573
+    },
+    {
+        "id": 1002101617,
+        "navn": "Sola",
+        "nummer": 1124,
+        "fylke": 11,
+        "organisasjonsnummer": 948243113
+    },
+    {
+        "id": 1002101618,
+        "navn": "Randaberg",
+        "nummer": 1127,
+        "fylke": 11,
+        "organisasjonsnummer": 934945514
+    },
+    {
+        "id": 1002101576,
+        "navn": "Ris\u00f8r",
+        "nummer": 4201,
+        "fylke": 42,
+        "organisasjonsnummer": 964977402
+    },
+    {
+        "id": 1002101620,
+        "navn": "Strand",
+        "nummer": 1130,
+        "fylke": 11,
+        "organisasjonsnummer": 964978751
+    },
+    {
+        "id": 1002101577,
+        "navn": "Grimstad",
+        "nummer": 4202,
+        "fylke": 42,
+        "organisasjonsnummer": 864964702
+    },
+    {
+        "id": 1002101578,
+        "navn": "Arendal",
+        "nummer": 4203,
+        "fylke": 42,
+        "organisasjonsnummer": 940493021
+    },
+    {
+        "id": 1006202705,
+        "navn": "Kristiansand",
+        "nummer": 4204,
+        "fylke": 42,
+        "organisasjonsnummer": 820852982
+    },
+    {
+        "id": 1006202706,
+        "navn": "Lindesnes",
+        "nummer": 4205,
+        "fylke": 42,
+        "organisasjonsnummer": 921060440
+    },
+    {
+        "id": 1002101621,
+        "navn": "Hjelmeland",
+        "nummer": 1133,
+        "fylke": 11,
+        "organisasjonsnummer": 864979092
+    },
+    {
+        "id": 1002101622,
+        "navn": "Suldal",
+        "nummer": 1134,
+        "fylke": 11,
+        "organisasjonsnummer": 964979189
+    },
+    {
+        "id": 1002101593,
+        "navn": "Farsund",
+        "nummer": 4206,
+        "fylke": 42,
+        "organisasjonsnummer": 964083266
+    },
+    {
+        "id": 1002101594,
+        "navn": "Flekkefjord",
+        "nummer": 4207,
+        "fylke": 42,
+        "organisasjonsnummer": 964967369
+    },
+    {
+        "id": 1002101623,
+        "navn": "Sauda",
+        "nummer": 1135,
+        "fylke": 11,
+        "organisasjonsnummer": 964979367
+    },
+    {
+        "id": 1002101579,
+        "navn": "Gjerstad",
+        "nummer": 4211,
+        "fylke": 42,
+        "organisasjonsnummer": 964964998
+    },
+    {
+        "id": 1002101580,
+        "navn": "Veg\u00e5rshei",
+        "nummer": 4212,
+        "fylke": 42,
+        "organisasjonsnummer": 964965048
+    },
+    {
+        "id": 1002101581,
+        "navn": "Tvedestrand",
+        "nummer": 4213,
+        "fylke": 42,
+        "organisasjonsnummer": 964965781
+    },
+    {
+        "id": 1002101582,
+        "navn": "Froland",
+        "nummer": 4214,
+        "fylke": 42,
+        "organisasjonsnummer": 946439045
+    },
+    {
+        "id": 1002101583,
+        "navn": "Lillesand",
+        "nummer": 4215,
+        "fylke": 42,
+        "organisasjonsnummer": 964965404
+    },
+    {
+        "id": 1002101626,
+        "navn": "Kvits\u00f8y",
+        "nummer": 1144,
+        "fylke": 11,
+        "organisasjonsnummer": 964979634
+    },
+    {
+        "id": 1002101584,
+        "navn": "Birkenes",
+        "nummer": 4216,
+        "fylke": 42,
+        "organisasjonsnummer": 964965870
+    },
+    {
+        "id": 1002101585,
+        "navn": "\u00c5mli",
+        "nummer": 4217,
+        "fylke": 42,
+        "organisasjonsnummer": 864965962
+    },
+    {
+        "id": 1002101627,
+        "navn": "Bokn",
+        "nummer": 1145,
+        "fylke": 11,
+        "organisasjonsnummer": 964979723
+    },
+    {
+        "id": 1002101628,
+        "navn": "Tysv\u00e6r",
+        "nummer": 1146,
+        "fylke": 11,
+        "organisasjonsnummer": 964979812
+    },
+    {
+        "id": 1002101586,
+        "navn": "Iveland",
+        "nummer": 4218,
+        "fylke": 42,
+        "organisasjonsnummer": 864966012
+    },
+    {
+        "id": 1002101587,
+        "navn": "Evje og Hornnes",
+        "nummer": 4219,
+        "fylke": 42,
+        "organisasjonsnummer": 964966109
+    },
+    {
+        "id": 1002101588,
+        "navn": "Bygland",
+        "nummer": 4220,
+        "fylke": 42,
+        "organisasjonsnummer": 964966397
+    },
+    {
+        "id": 1002101629,
+        "navn": "Karm\u00f8y",
+        "nummer": 1149,
+        "fylke": 11,
+        "organisasjonsnummer": 940791901
+    },
+    {
+        "id": 1002101589,
+        "navn": "Valle",
+        "nummer": 4221,
+        "fylke": 42,
+        "organisasjonsnummer": 964966575
+    },
+    {
+        "id": 1002101590,
+        "navn": "Bykle",
+        "nummer": 4222,
+        "fylke": 42,
+        "organisasjonsnummer": 958814968
+    },
+    {
+        "id": 1002101630,
+        "navn": "Utsira",
+        "nummer": 1151,
+        "fylke": 11,
+        "organisasjonsnummer": 964979901
+    },
+    {
+        "id": 1002101595,
+        "navn": "Vennesla",
+        "nummer": 4223,
+        "fylke": 42,
+        "organisasjonsnummer": 936846777
+    },
+    {
+        "id": 1002101599,
+        "navn": "\u00c5seral",
+        "nummer": 4224,
+        "fylke": 42,
+        "organisasjonsnummer": 964966842
+    },
+    {
+        "id": 1006202707,
+        "navn": "Lyngdal",
+        "nummer": 4225,
+        "fylke": 42,
+        "organisasjonsnummer": 922421498
+    },
+    {
+        "id": 1002101463,
+        "navn": "B\u00e6rum",
+        "nummer": 3201,
+        "fylke": 32,
+        "organisasjonsnummer": 935478715
+    },
+    {
+        "id": 1002101603,
+        "navn": "H\u00e6gebostad",
+        "nummer": 4226,
+        "fylke": 42,
+        "organisasjonsnummer": 964963916
+    },
+    {
+        "id": 1002101604,
+        "navn": "Kvinesdal",
+        "nummer": 4227,
+        "fylke": 42,
+        "organisasjonsnummer": 964964076
+    },
+    {
+        "id": 1006202699,
+        "navn": "Asker",
+        "nummer": 3203,
+        "fylke": 32,
+        "organisasjonsnummer": 920125298
+    },
+    {
+        "id": 1002101605,
+        "navn": "Sirdal",
+        "nummer": 4228,
+        "fylke": 42,
+        "organisasjonsnummer": 964964165
+    },
+    {
+        "id": 1006202701,
+        "navn": "Lillestr\u00f8m",
+        "nummer": 3205,
+        "fylke": 32,
+        "organisasjonsnummer": 820710592
+    },
+    {
+        "id": 1006202698,
+        "navn": "Nordre Follo",
+        "nummer": 3207,
+        "fylke": 32,
+        "organisasjonsnummer": 922092648
+    },
+    {
+        "id": 1002101631,
+        "navn": "Vindafjord",
+        "nummer": 1160,
+        "fylke": 11,
+        "organisasjonsnummer": 988893226
+    },
+    {
+        "id": 1002101474,
+        "navn": "Ullensaker",
+        "nummer": 3209,
+        "fylke": 32,
+        "organisasjonsnummer": 933649768
+    },
+    {
+        "id": 1002101461,
+        "navn": "Nesodden",
+        "nummer": 3212,
+        "fylke": 32,
+        "organisasjonsnummer": 944383565
+    },
+    {
+        "id": 1002101460,
+        "navn": "Frogn",
+        "nummer": 3214,
+        "fylke": 32,
+        "organisasjonsnummer": 963999089
+    },
+    {
+        "id": 1002101457,
+        "navn": "Vestby",
+        "nummer": 3216,
+        "fylke": 32,
+        "organisasjonsnummer": 943485437
+    },
+    {
+        "id": 1002101459,
+        "navn": "\u00c5s",
+        "nummer": 3218,
+        "fylke": 32,
+        "organisasjonsnummer": 964948798
+    },
+    {
+        "id": 1002101469,
+        "navn": "Enebakk",
+        "nummer": 3220,
+        "fylke": 32,
+        "organisasjonsnummer": 964949581
+    },
+    {
+        "id": 1002101470,
+        "navn": "L\u00f8renskog",
+        "nummer": 3222,
+        "fylke": 32,
+        "organisasjonsnummer": 842566142
+    },
+    {
+        "id": 1002101468,
+        "navn": "R\u00e6lingen",
+        "nummer": 3224,
+        "fylke": 32,
+        "organisasjonsnummer": 952540556
+    },
+    {
+        "id": 1006202700,
+        "navn": "Aurskog-H\u00f8land",
+        "nummer": 3226,
+        "fylke": 32,
+        "organisasjonsnummer": 948164256
+    },
+    {
+        "id": 1002101475,
+        "navn": "Nes",
+        "nummer": 3228,
+        "fylke": 32,
+        "organisasjonsnummer": 938679088
+    },
+    {
+        "id": 1002101473,
+        "navn": "Gjerdrum",
+        "nummer": 3230,
+        "fylke": 32,
+        "organisasjonsnummer": 864949762
+    },
+    {
+        "id": 1002101472,
+        "navn": "Nittedal",
+        "nummer": 3232,
+        "fylke": 32,
+        "organisasjonsnummer": 971643870
+    },
+    {
+        "id": 1002101518,
+        "navn": "Lunner",
+        "nummer": 3234,
+        "fylke": 32,
+        "organisasjonsnummer": 961381452
+    },
+    {
+        "id": 1002101517,
+        "navn": "Jevnaker",
+        "nummer": 3236,
+        "fylke": 32,
+        "organisasjonsnummer": 961381363
+    },
+    {
+        "id": 1002101477,
+        "navn": "Nannestad",
+        "nummer": 3238,
+        "fylke": 32,
+        "organisasjonsnummer": 964950202
+    },
+    {
+        "id": 1002101476,
+        "navn": "Eidsvoll",
+        "nummer": 3240,
+        "fylke": 32,
+        "organisasjonsnummer": 964950113
+    },
+    {
+        "id": 1002101478,
+        "navn": "Hurdal",
+        "nummer": 3242,
+        "fylke": 32,
+        "organisasjonsnummer": 939780777
+    },
+    {
+        "id": 1006202696,
+        "navn": "Drammen",
+        "nummer": 3301,
+        "fylke": 33,
+        "organisasjonsnummer": 921234554
+    },
+    {
+        "id": 1002101529,
+        "navn": "Kongsberg",
+        "nummer": 3303,
+        "fylke": 33,
+        "organisasjonsnummer": 942402465
+    },
+    {
+        "id": 1002101530,
+        "navn": "Ringerike",
+        "nummer": 3305,
+        "fylke": 33,
+        "organisasjonsnummer": 940100925
+    },
+    {
+        "id": 1002101531,
+        "navn": "Hole",
+        "nummer": 3310,
+        "fylke": 33,
+        "organisasjonsnummer": 960010833
+    },
+    {
+        "id": 1002101543,
+        "navn": "Lier",
+        "nummer": 3312,
+        "fylke": 33,
+        "organisasjonsnummer": 857566122
+    },
+    {
+        "id": 1002101541,
+        "navn": "\u00d8vre Eiker",
+        "nummer": 3314,
+        "fylke": 33,
+        "organisasjonsnummer": 954597482
+    },
+    {
+        "id": 1002101540,
+        "navn": "Modum",
+        "nummer": 3316,
+        "fylke": 33,
+        "organisasjonsnummer": 970491589
+    },
+    {
+        "id": 1002101539,
+        "navn": "Kr\u00f8dsherad",
+        "nummer": 3318,
+        "fylke": 33,
+        "organisasjonsnummer": 964962855
+    },
+    {
+        "id": 1002101532,
+        "navn": "Fl\u00e5",
+        "nummer": 3320,
+        "fylke": 33,
+        "organisasjonsnummer": 964951462
+    },
+    {
+        "id": 1002101533,
+        "navn": "Nesbyen",
+        "nummer": 3322,
+        "fylke": 33,
+        "organisasjonsnummer": 964951640
+    },
+    {
+        "id": 1002101534,
+        "navn": "Gol",
+        "nummer": 3324,
+        "fylke": 33,
+        "organisasjonsnummer": 964952612
+    },
+    {
+        "id": 1002101535,
+        "navn": "Hemsedal",
+        "nummer": 3326,
+        "fylke": 33,
+        "organisasjonsnummer": 964952701
+    },
+    {
+        "id": 1002101536,
+        "navn": "\u00c5l",
+        "nummer": 3328,
+        "fylke": 33,
+        "organisasjonsnummer": 864952992
+    },
+    {
+        "id": 1002101537,
+        "navn": "Hol",
+        "nummer": 3330,
+        "fylke": 33,
+        "organisasjonsnummer": 944889116
+    },
+    {
+        "id": 1002101538,
+        "navn": "Sigdal",
+        "nummer": 3332,
+        "fylke": 33,
+        "organisasjonsnummer": 964962766
+    },
+    {
+        "id": 1002101546,
+        "navn": "Flesberg",
+        "nummer": 3334,
+        "fylke": 33,
+        "organisasjonsnummer": 940898862
+    },
+    {
+        "id": 1002101547,
+        "navn": "Rollag",
+        "nummer": 3336,
+        "fylke": 33,
+        "organisasjonsnummer": 964963282
+    },
+    {
+        "id": 1002101548,
+        "navn": "Nore og Uvdal",
+        "nummer": 3338,
+        "fylke": 33,
+        "organisasjonsnummer": 964950946
+    },
+    {
+        "id": 1002101774,
+        "navn": "Bod\u00f8",
+        "nummer": 1804,
+        "fylke": 18,
+        "organisasjonsnummer": 972418013
+    },
+    {
+        "id": 1006202733,
+        "navn": "Narvik",
+        "nummer": 1806,
+        "fylke": 18,
+        "organisasjonsnummer": 959469059
+    },
+    {
+        "id": 1002101776,
+        "navn": "Bindal",
+        "nummer": 1811,
+        "fylke": 18,
+        "organisasjonsnummer": 964983380
+    },
+    {
+        "id": 1002101777,
+        "navn": "S\u00f8mna",
+        "nummer": 1812,
+        "fylke": 18,
+        "organisasjonsnummer": 944810277
+    },
+    {
+        "id": 1002101778,
+        "navn": "Br\u00f8nn\u00f8y",
+        "nummer": 1813,
+        "fylke": 18,
+        "organisasjonsnummer": 964983291
+    },
+    {
+        "id": 1002101779,
+        "navn": "Vega",
+        "nummer": 1815,
+        "fylke": 18,
+        "organisasjonsnummer": 941017975
+    },
+    {
+        "id": 1002101780,
+        "navn": "Vevelstad",
+        "nummer": 1816,
+        "fylke": 18,
+        "organisasjonsnummer": 940651034
+    },
+    {
+        "id": 1002101781,
+        "navn": "Her\u00f8y",
+        "nummer": 1818,
+        "fylke": 18,
+        "organisasjonsnummer": 872417982
+    },
+    {
+        "id": 1002101782,
+        "navn": "Alstahaug",
+        "nummer": 1820,
+        "fylke": 18,
+        "organisasjonsnummer": 938712441
+    },
+    {
+        "id": 1002101783,
+        "navn": "Leirfjord",
+        "nummer": 1822,
+        "fylke": 18,
+        "organisasjonsnummer": 945034572
+    },
+    {
+        "id": 1002101784,
+        "navn": "Vefsn",
+        "nummer": 1824,
+        "fylke": 18,
+        "organisasjonsnummer": 844824122
+    },
+    {
+        "id": 1002101785,
+        "navn": "Grane",
+        "nummer": 1825,
+        "fylke": 18,
+        "organisasjonsnummer": 940643112
+    },
+    {
+        "id": 1002101786,
+        "navn": "Hattfjelldal",
+        "nummer": 1826,
+        "fylke": 18,
+        "organisasjonsnummer": 944716904
+    },
+    {
+        "id": 1002101787,
+        "navn": "D\u00f8nna",
+        "nummer": 1827,
+        "fylke": 18,
+        "organisasjonsnummer": 945114878
+    },
+    {
+        "id": 1002101788,
+        "navn": "Nesna",
+        "nummer": 1828,
+        "fylke": 18,
+        "organisasjonsnummer": 939600515
+    },
+    {
+        "id": 1002101789,
+        "navn": "Hemnes",
+        "nummer": 1832,
+        "fylke": 18,
+        "organisasjonsnummer": 846316442
+    },
+    {
+        "id": 1002101790,
+        "navn": "Rana",
+        "nummer": 1833,
+        "fylke": 18,
+        "organisasjonsnummer": 872418032
+    },
+    {
+        "id": 1002101791,
+        "navn": "Lur\u00f8y",
+        "nummer": 1834,
+        "fylke": 18,
+        "organisasjonsnummer": 940667852
+    },
+    {
+        "id": 1002101792,
+        "navn": "Tr\u00e6na",
+        "nummer": 1835,
+        "fylke": 18,
+        "organisasjonsnummer": 940192692
+    },
+    {
+        "id": 1002101793,
+        "navn": "R\u00f8d\u00f8y",
+        "nummer": 1836,
+        "fylke": 18,
+        "organisasjonsnummer": 945717173
+    },
+    {
+        "id": 1002101479,
+        "navn": "Oslo",
+        "nummer": 301,
+        "fylke": 3,
+        "organisasjonsnummer": 958935420
+    },
+    {
+        "id": 1002101794,
+        "navn": "Mel\u00f8y",
+        "nummer": 1837,
+        "fylke": 18,
+        "organisasjonsnummer": 970189866
+    },
+    {
+        "id": 1002101795,
+        "navn": "Gildesk\u00e5l",
+        "nummer": 1838,
+        "fylke": 18,
+        "organisasjonsnummer": 845901422
+    },
+    {
+        "id": 1002101796,
+        "navn": "Beiarn",
+        "nummer": 1839,
+        "fylke": 18,
+        "organisasjonsnummer": 961147867
+    },
+    {
+        "id": 1002101797,
+        "navn": "Saltdal",
+        "nummer": 1840,
+        "fylke": 18,
+        "organisasjonsnummer": 972417734
+    },
+    {
+        "id": 1002101798,
+        "navn": "Fauske",
+        "nummer": 1841,
+        "fylke": 18,
+        "organisasjonsnummer": 972418021
+    },
+    {
+        "id": 1002101799,
+        "navn": "S\u00f8rfold",
+        "nummer": 1845,
+        "fylke": 18,
+        "organisasjonsnummer": 972417750
+    },
+    {
+        "id": 1002101800,
+        "navn": "Steigen",
+        "nummer": 1848,
+        "fylke": 18,
+        "organisasjonsnummer": 962299385
+    },
+    {
+        "id": 1002101803,
+        "navn": "L\u00f8dingen",
+        "nummer": 1851,
+        "fylke": 18,
+        "organisasjonsnummer": 945468661
+    },
+    {
+        "id": 1002101549,
+        "navn": "Horten",
+        "nummer": 3901,
+        "fylke": 39,
+        "organisasjonsnummer": 964951284
+    },
+    {
+        "id": 1002101805,
+        "navn": "Evenes",
+        "nummer": 1853,
+        "fylke": 18,
+        "organisasjonsnummer": 940642140
+    },
+    {
+        "id": 1006202702,
+        "navn": "Holmestrand",
+        "nummer": 3903,
+        "fylke": 39,
+        "organisasjonsnummer": 917151229
+    },
+    {
+        "id": 1002101807,
+        "navn": "R\u00f8st",
+        "nummer": 1856,
+        "fylke": 18,
+        "organisasjonsnummer": 945037687
+    },
+    {
+        "id": 1002101808,
+        "navn": "V\u00e6r\u00f8y",
+        "nummer": 1857,
+        "fylke": 18,
+        "organisasjonsnummer": 964994307
+    },
+    {
+        "id": 1006202703,
+        "navn": "T\u00f8nsberg",
+        "nummer": 3905,
+        "fylke": 39,
+        "organisasjonsnummer": 921383681
+    },
+    {
+        "id": 1002101552,
+        "navn": "Sandefjord",
+        "nummer": 3907,
+        "fylke": 39,
+        "organisasjonsnummer": 916882807
+    },
+    {
+        "id": 1002101809,
+        "navn": "Flakstad",
+        "nummer": 1859,
+        "fylke": 18,
+        "organisasjonsnummer": 863320852
+    },
+    {
+        "id": 1002101810,
+        "navn": "Vestv\u00e5g\u00f8y",
+        "nummer": 1860,
+        "fylke": 18,
+        "organisasjonsnummer": 942570619
+    },
+    {
+        "id": 1002101553,
+        "navn": "Larvik",
+        "nummer": 3909,
+        "fylke": 39,
+        "organisasjonsnummer": 918082956
+    },
+    {
+        "id": 1002101557,
+        "navn": "F\u00e6rder",
+        "nummer": 3911,
+        "fylke": 39,
+        "organisasjonsnummer": 817263992
+    },
+    {
+        "id": 1002101480,
+        "navn": "Kongsvinger",
+        "nummer": 3401,
+        "fylke": 34,
+        "organisasjonsnummer": 944117784
+    },
+    {
+        "id": 1002101811,
+        "navn": "V\u00e5gan",
+        "nummer": 1865,
+        "fylke": 18,
+        "organisasjonsnummer": 938644500
+    },
+    {
+        "id": 1002101812,
+        "navn": "Hadsel",
+        "nummer": 1866,
+        "fylke": 18,
+        "organisasjonsnummer": 958501420
+    },
+    {
+        "id": 1002101813,
+        "navn": "B\u00f8",
+        "nummer": 1867,
+        "fylke": 18,
+        "organisasjonsnummer": 945452676
+    },
+    {
+        "id": 1002101481,
+        "navn": "Hamar",
+        "nummer": 3403,
+        "fylke": 34,
+        "organisasjonsnummer": 970540008
+    },
+    {
+        "id": 1002101814,
+        "navn": "\u00d8ksnes",
+        "nummer": 1868,
+        "fylke": 18,
+        "organisasjonsnummer": 845152012
+    },
+    {
+        "id": 1002101502,
+        "navn": "Lillehammer",
+        "nummer": 3405,
+        "fylke": 34,
+        "organisasjonsnummer": 945578564
+    },
+    {
+        "id": 1002101815,
+        "navn": "Sortland",
+        "nummer": 1870,
+        "fylke": 18,
+        "organisasjonsnummer": 847737492
+    },
+    {
+        "id": 1002101503,
+        "navn": "Gj\u00f8vik",
+        "nummer": 3407,
+        "fylke": 34,
+        "organisasjonsnummer": 940155223
+    },
+    {
+        "id": 1002101816,
+        "navn": "And\u00f8y",
+        "nummer": 1871,
+        "fylke": 18,
+        "organisasjonsnummer": 945624809
+    },
+    {
+        "id": 1002101817,
+        "navn": "Moskenes",
+        "nummer": 1874,
+        "fylke": 18,
+        "organisasjonsnummer": 945962151
+    },
+    {
+        "id": 1002101482,
+        "navn": "Ringsaker",
+        "nummer": 3411,
+        "fylke": 34,
+        "organisasjonsnummer": 864950582
+    },
+    {
+        "id": 1006202734,
+        "navn": "Hamar\u00f8y",
+        "nummer": 1875,
+        "fylke": 18,
+        "organisasjonsnummer": 970542507
+    },
+    {
+        "id": 1002101483,
+        "navn": "L\u00f8ten",
+        "nummer": 3412,
+        "fylke": 34,
+        "organisasjonsnummer": 964950679
+    },
+    {
+        "id": 1002101484,
+        "navn": "Stange",
+        "nummer": 3413,
+        "fylke": 34,
+        "organisasjonsnummer": 970169717
+    },
+    {
+        "id": 1002101485,
+        "navn": "Nord-Odal",
+        "nummer": 3414,
+        "fylke": 34,
+        "organisasjonsnummer": 964950768
+    },
+    {
+        "id": 1002101486,
+        "navn": "S\u00f8r-Odal",
+        "nummer": 3415,
+        "fylke": 34,
+        "organisasjonsnummer": 964947716
+    },
+    {
+        "id": 1002101487,
+        "navn": "Eidskog",
+        "nummer": 3416,
+        "fylke": 34,
+        "organisasjonsnummer": 964948054
+    },
+    {
+        "id": 1002101488,
+        "navn": "Grue",
+        "nummer": 3417,
+        "fylke": 34,
+        "organisasjonsnummer": 964948143
+    },
+    {
+        "id": 1002101489,
+        "navn": "\u00c5snes",
+        "nummer": 3418,
+        "fylke": 34,
+        "organisasjonsnummer": 964948232
+    },
+    {
+        "id": 1002101490,
+        "navn": "V\u00e5ler",
+        "nummer": 3419,
+        "fylke": 34,
+        "organisasjonsnummer": 871034222
+    },
+    {
+        "id": 1002101491,
+        "navn": "Elverum",
+        "nummer": 3420,
+        "fylke": 34,
+        "organisasjonsnummer": 952857991
+    },
+    {
+        "id": 1002101492,
+        "navn": "Trysil",
+        "nummer": 3421,
+        "fylke": 34,
+        "organisasjonsnummer": 864948502
+    },
+    {
+        "id": 1002101493,
+        "navn": "\u00c5mot",
+        "nummer": 3422,
+        "fylke": 34,
+        "organisasjonsnummer": 940152496
+    },
+    {
+        "id": 1002101494,
+        "navn": "Stor-Elvdal",
+        "nummer": 3423,
+        "fylke": 34,
+        "organisasjonsnummer": 964948887
+    },
+    {
+        "id": 1002101495,
+        "navn": "Rendalen",
+        "nummer": 3424,
+        "fylke": 34,
+        "organisasjonsnummer": 940028515
+    },
+    {
+        "id": 1002101496,
+        "navn": "Engerdal",
+        "nummer": 3425,
+        "fylke": 34,
+        "organisasjonsnummer": 964948976
+    },
+    {
+        "id": 1002101497,
+        "navn": "Tolga",
+        "nummer": 3426,
+        "fylke": 34,
+        "organisasjonsnummer": 940192404
+    },
+    {
+        "id": 1002101498,
+        "navn": "Tynset",
+        "nummer": 3427,
+        "fylke": 34,
+        "organisasjonsnummer": 940837685
+    },
+    {
+        "id": 1002101499,
+        "navn": "Alvdal",
+        "nummer": 3428,
+        "fylke": 34,
+        "organisasjonsnummer": 939984194
+    },
+    {
+        "id": 1002101500,
+        "navn": "Folldal",
+        "nummer": 3429,
+        "fylke": 34,
+        "organisasjonsnummer": 939885684
+    },
+    {
+        "id": 1002101501,
+        "navn": "Os",
+        "nummer": 3430,
+        "fylke": 34,
+        "organisasjonsnummer": 943464723
+    },
+    {
+        "id": 1002101504,
+        "navn": "Dovre",
+        "nummer": 3431,
+        "fylke": 34,
+        "organisasjonsnummer": 939849831
+    },
+    {
+        "id": 1002101505,
+        "navn": "Lesja",
+        "nummer": 3432,
+        "fylke": 34,
+        "organisasjonsnummer": 964949204
+    },
+    {
+        "id": 1002101506,
+        "navn": "Skj\u00e5k",
+        "nummer": 3433,
+        "fylke": 34,
+        "organisasjonsnummer": 961381096
+    },
+    {
+        "id": 1002101507,
+        "navn": "Lom",
+        "nummer": 3434,
+        "fylke": 34,
+        "organisasjonsnummer": 959377677
+    },
+    {
+        "id": 1002101508,
+        "navn": "V\u00e5g\u00e5",
+        "nummer": 3435,
+        "fylke": 34,
+        "organisasjonsnummer": 939607706
+    },
+    {
+        "id": 1002101509,
+        "navn": "Nord-Fron",
+        "nummer": 3436,
+        "fylke": 34,
+        "organisasjonsnummer": 839893132
+    },
+    {
+        "id": 1002101510,
+        "navn": "Sel",
+        "nummer": 3437,
+        "fylke": 34,
+        "organisasjonsnummer": 939617671
+    },
+    {
+        "id": 1002101511,
+        "navn": "S\u00f8r-Fron",
+        "nummer": 3438,
+        "fylke": 34,
+        "organisasjonsnummer": 941827195
+    },
+    {
+        "id": 1002101512,
+        "navn": "Ringebu",
+        "nummer": 3439,
+        "fylke": 34,
+        "organisasjonsnummer": 939864970
+    },
+    {
+        "id": 1002101513,
+        "navn": "\u00d8yer",
+        "nummer": 3440,
+        "fylke": 34,
+        "organisasjonsnummer": 961381185
+    },
+    {
+        "id": 1002101514,
+        "navn": "Gausdal",
+        "nummer": 3441,
+        "fylke": 34,
+        "organisasjonsnummer": 961381274
+    },
+    {
+        "id": 1002101515,
+        "navn": "\u00d8stre Toten",
+        "nummer": 3442,
+        "fylke": 34,
+        "organisasjonsnummer": 964949859
+    },
+    {
+        "id": 1002101516,
+        "navn": "Vestre Toten",
+        "nummer": 3443,
+        "fylke": 34,
+        "organisasjonsnummer": 971028300
+    },
+    {
+        "id": 1002101519,
+        "navn": "Gran",
+        "nummer": 3446,
+        "fylke": 34,
+        "organisasjonsnummer": 961381541
+    },
+    {
+        "id": 1002101520,
+        "navn": "S\u00f8ndre Land",
+        "nummer": 3447,
+        "fylke": 34,
+        "organisasjonsnummer": 961381630
+    },
+    {
+        "id": 1002101521,
+        "navn": "Nordre Land",
+        "nummer": 3448,
+        "fylke": 34,
+        "organisasjonsnummer": 861381722
+    },
+    {
+        "id": 1002101522,
+        "navn": "S\u00f8r-Aurdal",
+        "nummer": 3449,
+        "fylke": 34,
+        "organisasjonsnummer": 961381819
+    },
+    {
+        "id": 1002101523,
+        "navn": "Etnedal",
+        "nummer": 3450,
+        "fylke": 34,
+        "organisasjonsnummer": 933038173
+    },
+    {
+        "id": 1002101524,
+        "navn": "Nord-Aurdal",
+        "nummer": 3451,
+        "fylke": 34,
+        "organisasjonsnummer": 961381908
+    },
+    {
+        "id": 1002101525,
+        "navn": "Vestre Slidre",
+        "nummer": 3452,
+        "fylke": 34,
+        "organisasjonsnummer": 961382157
+    },
+    {
+        "id": 1002101526,
+        "navn": "\u00d8ystre Slidre",
+        "nummer": 3453,
+        "fylke": 34,
+        "organisasjonsnummer": 961382068
+    },
+    {
+        "id": 1002101819,
+        "navn": "Troms\u00f8",
+        "nummer": 5501,
+        "fylke": 55,
+        "organisasjonsnummer": 940101808
+    },
+    {
+        "id": 1002101527,
+        "navn": "Vang",
+        "nummer": 3454,
+        "fylke": 34,
+        "organisasjonsnummer": 961382246
+    },
+    {
+        "id": 1002101818,
+        "navn": "Harstad",
+        "nummer": 5503,
+        "fylke": 55,
+        "organisasjonsnummer": 972417971
+    },
+    {
+        "id": 1002101820,
+        "navn": "Kv\u00e6fjord",
+        "nummer": 5510,
+        "fylke": 55,
+        "organisasjonsnummer": 972417998
+    },
+    {
+        "id": 1006202736,
+        "navn": "Tjeldsund",
+        "nummer": 5512,
+        "fylke": 55,
+        "organisasjonsnummer": 959469326
+    },
+    {
+        "id": 1006202724,
+        "navn": "Trondheim",
+        "nummer": 5001,
+        "fylke": 50,
+        "organisasjonsnummer": 942110464
+    },
+    {
+        "id": 1002101822,
+        "navn": "Ibestad",
+        "nummer": 5514,
+        "fylke": 55,
+        "organisasjonsnummer": 959469792
+    },
+    {
+        "id": 1002101823,
+        "navn": "Gratangen",
+        "nummer": 5516,
+        "fylke": 55,
+        "organisasjonsnummer": 959469415
+    },
+    {
+        "id": 1006202725,
+        "navn": "Steinkjer",
+        "nummer": 5006,
+        "fylke": 50,
+        "organisasjonsnummer": 840029212
+    },
+    {
+        "id": 1002101824,
+        "navn": "Lavangen",
+        "nummer": 5518,
+        "fylke": 55,
+        "organisasjonsnummer": 959469881
+    },
+    {
+        "id": 1006202726,
+        "navn": "Namsos",
+        "nummer": 5007,
+        "fylke": 50,
+        "organisasjonsnummer": 942875967
+    },
+    {
+        "id": 1002101825,
+        "navn": "Bardu",
+        "nummer": 5520,
+        "fylke": 55,
+        "organisasjonsnummer": 864993982
+    },
+    {
+        "id": 1002101826,
+        "navn": "Salangen",
+        "nummer": 5522,
+        "fylke": 55,
+        "organisasjonsnummer": 961416388
+    },
+    {
+        "id": 1002101827,
+        "navn": "M\u00e5lselv",
+        "nummer": 5524,
+        "fylke": 55,
+        "organisasjonsnummer": 972418005
+    },
+    {
+        "id": 1002101828,
+        "navn": "S\u00f8rreisa",
+        "nummer": 5526,
+        "fylke": 55,
+        "organisasjonsnummer": 940755603
+    },
+    {
+        "id": 1002101731,
+        "navn": "Fr\u00f8ya",
+        "nummer": 5014,
+        "fylke": 50,
+        "organisasjonsnummer": 964982597
+    },
+    {
+        "id": 1002101829,
+        "navn": "Dyr\u00f8y",
+        "nummer": 5528,
+        "fylke": 55,
+        "organisasjonsnummer": 864994032
+    },
+    {
+        "id": 1006202737,
+        "navn": "Senja",
+        "nummer": 5530,
+        "fylke": 55,
+        "organisasjonsnummer": 921369417
+    },
+    {
+        "id": 1002101738,
+        "navn": "Osen",
+        "nummer": 5020,
+        "fylke": 50,
+        "organisasjonsnummer": 944350675
+    },
+    {
+        "id": 1002101834,
+        "navn": "Balsfjord",
+        "nummer": 5532,
+        "fylke": 55,
+        "organisasjonsnummer": 940208580
+    },
+    {
+        "id": 1002101739,
+        "navn": "Oppdal",
+        "nummer": 5021,
+        "fylke": 50,
+        "organisasjonsnummer": 964983003
+    },
+    {
+        "id": 1002101835,
+        "navn": "Karls\u00f8y",
+        "nummer": 5534,
+        "fylke": 55,
+        "organisasjonsnummer": 940330408
+    },
+    {
+        "id": 1002101740,
+        "navn": "Rennebu",
+        "nummer": 5022,
+        "fylke": 50,
+        "organisasjonsnummer": 940083672
+    },
+    {
+        "id": 1002101836,
+        "navn": "Lyngen",
+        "nummer": 5536,
+        "fylke": 55,
+        "organisasjonsnummer": 840014932
+    },
+    {
+        "id": 1002101558,
+        "navn": "Porsgrunn",
+        "nummer": 4001,
+        "fylke": 40,
+        "organisasjonsnummer": 939991034
+    },
+    {
+        "id": 1002101743,
+        "navn": "R\u00f8ros",
+        "nummer": 5025,
+        "fylke": 50,
+        "organisasjonsnummer": 939898743
+    },
+    {
+        "id": 1002101837,
+        "navn": "Storfjord",
+        "nummer": 5538,
+        "fylke": 55,
+        "organisasjonsnummer": 964994129
+    },
+    {
+        "id": 1002101744,
+        "navn": "Holt\u00e5len",
+        "nummer": 5026,
+        "fylke": 50,
+        "organisasjonsnummer": 937697767
+    },
+    {
+        "id": 1002101745,
+        "navn": "Midtre Gauldal",
+        "nummer": 5027,
+        "fylke": 50,
+        "organisasjonsnummer": 970187715
+    },
+    {
+        "id": 1002101559,
+        "navn": "Skien",
+        "nummer": 4003,
+        "fylke": 40,
+        "organisasjonsnummer": 938759839
+    },
+    {
+        "id": 1002101838,
+        "navn": "G\u00e0ivuotna-K\u00e5fjord",
+        "nummer": 5540,
+        "fylke": 55,
+        "organisasjonsnummer": 940363586
+    },
+    {
+        "id": 1002101746,
+        "navn": "Melhus",
+        "nummer": 5028,
+        "fylke": 50,
+        "organisasjonsnummer": 938726027
+    },
+    {
+        "id": 1002101747,
+        "navn": "Skaun",
+        "nummer": 5029,
+        "fylke": 50,
+        "organisasjonsnummer": 939865942
+    },
+    {
+        "id": 1002101560,
+        "navn": "Notodden",
+        "nummer": 4005,
+        "fylke": 40,
+        "organisasjonsnummer": 938583986
+    },
+    {
+        "id": 1002101839,
+        "navn": "Skjerv\u00f8y",
+        "nummer": 5542,
+        "fylke": 55,
+        "organisasjonsnummer": 941812716
+    },
+    {
+        "id": 1002101749,
+        "navn": "Malvik",
+        "nummer": 5031,
+        "fylke": 50,
+        "organisasjonsnummer": 971035560
+    },
+    {
+        "id": 1002101840,
+        "navn": "Nordreisa",
+        "nummer": 5544,
+        "fylke": 55,
+        "organisasjonsnummer": 943350833
+    },
+    {
+        "id": 1002101750,
+        "navn": "Selbu",
+        "nummer": 5032,
+        "fylke": 50,
+        "organisasjonsnummer": 971197609
+    },
+    {
+        "id": 1002101751,
+        "navn": "Tydal",
+        "nummer": 5033,
+        "fylke": 50,
+        "organisasjonsnummer": 864983472
+    },
+    {
+        "id": 1002101841,
+        "navn": "Kv\u00e6nangen",
+        "nummer": 5546,
+        "fylke": 55,
+        "organisasjonsnummer": 940331102
+    },
+    {
+        "id": 1002101754,
+        "navn": "Mer\u00e5ker",
+        "nummer": 5034,
+        "fylke": 50,
+        "organisasjonsnummer": 835231712
+    },
+    {
+        "id": 1002101561,
+        "navn": "Siljan",
+        "nummer": 4010,
+        "fylke": 40,
+        "organisasjonsnummer": 864953042
+    },
+    {
+        "id": 1002101755,
+        "navn": "Stj\u00f8rdal",
+        "nummer": 5035,
+        "fylke": 50,
+        "organisasjonsnummer": 939958851
+    },
+    {
+        "id": 1002101562,
+        "navn": "Bamble",
+        "nummer": 4012,
+        "fylke": 40,
+        "organisasjonsnummer": 940244145
+    },
+    {
+        "id": 1002101756,
+        "navn": "Frosta",
+        "nummer": 5036,
+        "fylke": 50,
+        "organisasjonsnummer": 944482253
+    },
+    {
+        "id": 1002101757,
+        "navn": "Levanger",
+        "nummer": 5037,
+        "fylke": 50,
+        "organisasjonsnummer": 938587051
+    },
+    {
+        "id": 1002101758,
+        "navn": "Verdal",
+        "nummer": 5038,
+        "fylke": 50,
+        "organisasjonsnummer": 938587418
+    },
+    {
+        "id": 1002101563,
+        "navn": "Krager\u00f8",
+        "nummer": 4014,
+        "fylke": 40,
+        "organisasjonsnummer": 963946902
+    },
+    {
+        "id": 1002101564,
+        "navn": "Drangedal",
+        "nummer": 4016,
+        "fylke": 40,
+        "organisasjonsnummer": 933277461
+    },
+    {
+        "id": 1002101762,
+        "navn": "Sn\u00e5sa",
+        "nummer": 5041,
+        "fylke": 50,
+        "organisasjonsnummer": 964982031
+    },
+    {
+        "id": 1002101565,
+        "navn": "Nome",
+        "nummer": 4018,
+        "fylke": 40,
+        "organisasjonsnummer": 964963371
+    },
+    {
+        "id": 1002101763,
+        "navn": "Lierne",
+        "nummer": 5042,
+        "fylke": 50,
+        "organisasjonsnummer": 972417963
+    },
+    {
+        "id": 1002101764,
+        "navn": "R\u00f8yrvik",
+        "nummer": 5043,
+        "fylke": 50,
+        "organisasjonsnummer": 964982120
+    },
+    {
+        "id": 1002101765,
+        "navn": "Namsskogan",
+        "nummer": 5044,
+        "fylke": 50,
+        "organisasjonsnummer": 864982212
+    },
+    {
+        "id": 1006202704,
+        "navn": "Midt-Telemark",
+        "nummer": 4020,
+        "fylke": 40,
+        "organisasjonsnummer": 920297293
+    },
+    {
+        "id": 1002101766,
+        "navn": "Grong",
+        "nummer": 5045,
+        "fylke": 50,
+        "organisasjonsnummer": 940010853
+    },
+    {
+        "id": 1002101570,
+        "navn": "Seljord",
+        "nummer": 4022,
+        "fylke": 40,
+        "organisasjonsnummer": 964963738
+    },
+    {
+        "id": 1002101767,
+        "navn": "H\u00f8ylandet",
+        "nummer": 5046,
+        "fylke": 50,
+        "organisasjonsnummer": 959220476
+    },
+    {
+        "id": 1002101768,
+        "navn": "Overhalla",
+        "nummer": 5047,
+        "fylke": 50,
+        "organisasjonsnummer": 939896600
+    },
+    {
+        "id": 1002101569,
+        "navn": "Hjartdal",
+        "nummer": 4024,
+        "fylke": 40,
+        "organisasjonsnummer": 964963649
+    },
+    {
+        "id": 1002101770,
+        "navn": "Flatanger",
+        "nummer": 5049,
+        "fylke": 50,
+        "organisasjonsnummer": 845153272
+    },
+    {
+        "id": 1002101568,
+        "navn": "Tinn",
+        "nummer": 4026,
+        "fylke": 40,
+        "organisasjonsnummer": 864963552
+    },
+    {
+        "id": 1002101571,
+        "navn": "Kviteseid",
+        "nummer": 4028,
+        "fylke": 40,
+        "organisasjonsnummer": 964963827
+    },
+    {
+        "id": 1002101773,
+        "navn": "Leka",
+        "nummer": 5052,
+        "fylke": 50,
+        "organisasjonsnummer": 944484574
+    },
+    {
+        "id": 1002101761,
+        "navn": "Inder\u00f8y",
+        "nummer": 5053,
+        "fylke": 50,
+        "organisasjonsnummer": 997391853
+    },
+    {
+        "id": 1002101572,
+        "navn": "Nissedal",
+        "nummer": 4030,
+        "fylke": 40,
+        "organisasjonsnummer": 964964343
+    },
+    {
+        "id": 1002101734,
+        "navn": "Indre Fosen",
+        "nummer": 5054,
+        "fylke": 50,
+        "organisasjonsnummer": 944305483
+    },
+    {
+        "id": 1006202727,
+        "navn": "Heim",
+        "nummer": 5055,
+        "fylke": 50,
+        "organisasjonsnummer": 920920004
+    },
+    {
+        "id": 1002101573,
+        "navn": "Fyresdal",
+        "nummer": 4032,
+        "fylke": 40,
+        "organisasjonsnummer": 939772766
+    },
+    {
+        "id": 1006202728,
+        "navn": "Hitra",
+        "nummer": 5056,
+        "fylke": 50,
+        "organisasjonsnummer": 938772924
+    },
+    {
+        "id": 1006202729,
+        "navn": "\u00d8rland",
+        "nummer": 5057,
+        "fylke": 50,
+        "organisasjonsnummer": 921806027
+    },
+    {
+        "id": 1006202730,
+        "navn": "\u00c5fjord",
+        "nummer": 5058,
+        "fylke": 50,
+        "organisasjonsnummer": 921875533
+    },
+    {
+        "id": 1002101574,
+        "navn": "Tokke",
+        "nummer": 4034,
+        "fylke": 40,
+        "organisasjonsnummer": 964964521
+    },
+    {
+        "id": 1006202731,
+        "navn": "Orkland",
+        "nummer": 5059,
+        "fylke": 50,
+        "organisasjonsnummer": 921233418
+    },
+    {
+        "id": 1002101575,
+        "navn": "Vinje",
+        "nummer": 4036,
+        "fylke": 40,
+        "organisasjonsnummer": 964964610
+    },
+    {
+        "id": 1006202732,
+        "navn": "N\u00e6r\u00f8ysund",
+        "nummer": 5060,
+        "fylke": 50,
+        "organisasjonsnummer": 921785410
+    },
+    {
+        "id": 1002101723,
+        "navn": "Rindal",
+        "nummer": 5061,
+        "fylke": 50,
+        "organisasjonsnummer": 940138051
+    },
+    {
+        "id": 1002101692,
+        "navn": "Kristiansund",
+        "nummer": 1505,
+        "fylke": 15,
+        "organisasjonsnummer": 991891919
+    },
+    {
+        "id": 1002101846,
+        "navn": "Alta",
+        "nummer": 5601,
+        "fylke": 56,
+        "organisasjonsnummer": 944588132
+    },
+    {
+        "id": 1006202719,
+        "navn": "Molde",
+        "nummer": 1506,
+        "fylke": 15,
+        "organisasjonsnummer": 921221967
+    },
+    {
+        "id": 1006202735,
+        "navn": "Hammerfest",
+        "nummer": 5603,
+        "fylke": 56,
+        "organisasjonsnummer": 921770669
+    },
+    {
+        "id": 1006202720,
+        "navn": "\u00c5lesund",
+        "nummer": 1508,
+        "fylke": 15,
+        "organisasjonsnummer": 929911709
+    },
+    {
+        "id": 1002101860,
+        "navn": "S\u00f8r-Varanger",
+        "nummer": 5605,
+        "fylke": 56,
+        "organisasjonsnummer": 942110286
+    },
+    {
+        "id": 1002101694,
+        "navn": "Vanylven",
+        "nummer": 1511,
+        "fylke": 15,
+        "organisasjonsnummer": 964978662
+    },
+    {
+        "id": 1002101843,
+        "navn": "Vads\u00f8",
+        "nummer": 5607,
+        "fylke": 56,
+        "organisasjonsnummer": 964993602
+    },
+    {
+        "id": 1002101695,
+        "navn": "Sande",
+        "nummer": 1514,
+        "fylke": 15,
+        "organisasjonsnummer": 822534422
+    },
+    {
+        "id": 1002101853,
+        "navn": "K\u00e0r\u00e0sjohka-Karasjok",
+        "nummer": 5610,
+        "fylke": 56,
+        "organisasjonsnummer": 963376030
+    },
+    {
+        "id": 1002101696,
+        "navn": "Her\u00f8y",
+        "nummer": 1515,
+        "fylke": 15,
+        "organisasjonsnummer": 964978840
+    },
+    {
+        "id": 1002101697,
+        "navn": "Ulstein",
+        "nummer": 1516,
+        "fylke": 15,
+        "organisasjonsnummer": 964979456
+    },
+    {
+        "id": 1002101845,
+        "navn": "Kautokeino",
+        "nummer": 5612,
+        "fylke": 56,
+        "organisasjonsnummer": 945475056
+    },
+    {
+        "id": 1002101698,
+        "navn": "Hareid",
+        "nummer": 1517,
+        "fylke": 15,
+        "organisasjonsnummer": 964979278
+    },
+    {
+        "id": 1002101847,
+        "navn": "Loppa",
+        "nummer": 5614,
+        "fylke": 56,
+        "organisasjonsnummer": 963063237
+    },
+    {
+        "id": 1002101700,
+        "navn": "\u00d8rsta",
+        "nummer": 1520,
+        "fylke": 15,
+        "organisasjonsnummer": 939461450
+    },
+    {
+        "id": 1002101848,
+        "navn": "Hasvik",
+        "nummer": 5616,
+        "fylke": 56,
+        "organisasjonsnummer": 964830711
+    },
+    {
+        "id": 1002101850,
+        "navn": "M\u00e5s\u00f8y",
+        "nummer": 5618,
+        "fylke": 56,
+        "organisasjonsnummer": 941087957
+    },
+    {
+        "id": 1002101851,
+        "navn": "Nordkapp",
+        "nummer": 5620,
+        "fylke": 56,
+        "organisasjonsnummer": 938469415
+    },
+    {
+        "id": 1002101703,
+        "navn": "Stranda",
+        "nummer": 1525,
+        "fylke": 15,
+        "organisasjonsnummer": 964980098
+    },
+    {
+        "id": 1002101852,
+        "navn": "Porsanger",
+        "nummer": 5622,
+        "fylke": 56,
+        "organisasjonsnummer": 959411735
+    },
+    {
+        "id": 1002101705,
+        "navn": "Sykkylven",
+        "nummer": 1528,
+        "fylke": 15,
+        "organisasjonsnummer": 964980365
+    },
+    {
+        "id": 1002101854,
+        "navn": "Lebesby",
+        "nummer": 5624,
+        "fylke": 56,
+        "organisasjonsnummer": 940400392
+    },
+    {
+        "id": 1002101632,
+        "navn": "Bergen",
+        "nummer": 4601,
+        "fylke": 46,
+        "organisasjonsnummer": 964338531
+    },
+    {
+        "id": 1002101855,
+        "navn": "Gamvik",
+        "nummer": 5626,
+        "fylke": 56,
+        "organisasjonsnummer": 934266811
+    },
+    {
+        "id": 1006202710,
+        "navn": "Kinn",
+        "nummer": 4602,
+        "fylke": 46,
+        "organisasjonsnummer": 820956532
+    },
+    {
+        "id": 1002101707,
+        "navn": "Sula",
+        "nummer": 1531,
+        "fylke": 15,
+        "organisasjonsnummer": 964980543
+    },
+    {
+        "id": 1002101708,
+        "navn": "Giske",
+        "nummer": 1532,
+        "fylke": 15,
+        "organisasjonsnummer": 964980721
+    },
+    {
+        "id": 1002101857,
+        "navn": "Deatnu-Tana",
+        "nummer": 5628,
+        "fylke": 56,
+        "organisasjonsnummer": 943505527
+    },
+    {
+        "id": 1002101856,
+        "navn": "Berlev\u00e5g",
+        "nummer": 5630,
+        "fylke": 56,
+        "organisasjonsnummer": 962388108
+    },
+    {
+        "id": 1002101710,
+        "navn": "Vestnes",
+        "nummer": 1535,
+        "fylke": 15,
+        "organisasjonsnummer": 939901965
+    }
+]
