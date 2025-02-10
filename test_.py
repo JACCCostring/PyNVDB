@@ -117,4 +117,6 @@ def test_egenskap_strategy(egenskape_strategy):
     egenskape_strategy.filter({'egenskap': {'Høyde': 0.34}})
     
     # assert egenskape_strategy.query('=') == 'vegobjekter/470?egenskap=egenskap(3779)=4822 AND egenskap(13072)=22693'
+    print()
+    print()
     print(egenskape_strategy.query('='))
