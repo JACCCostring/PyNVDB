@@ -56,6 +56,7 @@ class EgenskapStrategy(Strategy):
     def query(self, op: str) -> str:
 
         base_concatenated_query: str = f'vegobjekter/{self.___roadobjecttype}?egenskap='
+        temp_concat_href: str = str()
         list_of_codes: set = set()
 
         catalog = Datacatalog()
@@ -80,7 +81,7 @@ class EgenskapStrategy(Strategy):
                                 value_code = search_v_code if not search_v_code is None else v
                                 key_code = prop['id']
 
-                                list_of_codes.add(f'egenskap=({key_code})={value_code}')
+                                list_of_codes.add(f'egenskap({key_code}){op}{value_code}')
 
                                 for possi_val in prop['possible_values']:
 
@@ -88,7 +89,26 @@ class EgenskapStrategy(Strategy):
                                         id = prop['id']
                                         value = possi_val['id']
 
-                                        list_of_codes.add(f'egenskap=({id})={value}')
-        
+                                        list_of_codes.add(f'egenskap({id}){op}{value}')
+        counter: int = 1
+        word: str = str()
+
         for item in list_of_codes:
-            print(item)
+            if counter <= len( list_of_codes ) - 1:
+                word = ' AND '
+            else:
+                word = ''
+
+            temp_concat_href += item + word
+            counter += 1
+        
+        full_href = base_concatenated_query + temp_concat_href
+
+        # print( full_href )
+        '''
+            is passing the minimum test now, but need to be more efficient
+            making sure that wahc element in filters collection/data structure
+            has it's own operator =>< or !=
+        '''
+
+        return full_href
