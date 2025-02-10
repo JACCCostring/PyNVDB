@@ -109,6 +109,10 @@ class EgenskapStrategy(Strategy):
             is passing the minimum test now, but need to be more efficient
             making sure that wahc element in filters collection/data structure
             has it's own operator =>< or !=
+
+            i think a redo of hole method is necesary, because if better aproach
+            if we give filter({'egenskap': 'Type = Radio'}) so we can get the operator
+            straight from the query instead of passing it as an argument
         '''
 
         return full_href
