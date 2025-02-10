@@ -117,8 +117,4 @@ def test_egenskap_strategy(egenskape_strategy):
     egenskape_strategy.filter({'egenskap': {'Høyde': 0.34}})
     egenskape_strategy.filter({'egenskap': {'Etableringsår': 1997}})
 
-    CASE_1 = 'vegobjekter/470?egenskap=egenskap(4072)=1997 AND egenskap(3874)=0.34 AND egenskap(13072)=22693 AND egenskap(3779)=4822'
-    
-    # assert egenskape_strategy.query('>') == CASE_1
-
     egenskape_strategy.query('>')
