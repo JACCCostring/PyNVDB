@@ -56,49 +56,39 @@ class EgenskapStrategy(Strategy):
     def query(self, op: str) -> str:
 
         base_concatenated_query: str = f'vegobjekter/{self.___roadobjecttype}?egenskap='
-        temp_concatenated_query: str = str()
-        temp_concat_list: list = [str]
+        list_of_codes: set = set()
 
         catalog = Datacatalog()
 
-        egenskaper = catalog.especific_record( type_id=self.___roadobjecttype )['props']
+        record = catalog.especific_record( type_id=self.___roadobjecttype ) #a record
+
+        props = record['props'] #a list of props
+
+        def search_code(p: list, name: str):
+            for i in p:
+                if i['verdi'] == name:
+                    return i['id']
 
         for filt in self.___filters:
-            if filt.get('egenskap'):
-                for key, value in filt.get('egenskap').items():
-                    
-                    for egensk in egenskaper:
-                        if egensk['name'] == key:
-                            
-                            #adding egenskaper that has not possible values
-                            eg_id_not_val = egensk['id']
+            for name, item in filt.items():
+                if name == 'egenskap':
+                    for k, v in item.items():
+                        for prop in props:
+                            if prop['name'] == k:
 
-                            temp_concat_list.append( f'egenskap({eg_id_not_val}){op}{value}' )
+                                search_v_code = search_code(prop['possible_values'], v)
+                                value_code = search_v_code if not search_v_code is None else v
+                                key_code = prop['id']
 
-                            #adding egenskaper that has especific possible values
-                            possible_values = egensk['possible_values']
-                            
-                            for values in possible_values:
-                                if values['verdi'] == value:
-                                    #concatenate
-                                    id_egenskap = egensk['id']
-                                    id_value = values['id']
-                                    
-                                    temp_concat_list.append( f'egenskap({id_egenskap}){op}{id_value}' )
+                                list_of_codes.add(f'egenskap=({key_code})={value_code}')
+
+                                for possi_val in prop['possible_values']:
+
+                                    if possi_val['verdi'] == v:
+                                        id = prop['id']
+                                        value = possi_val['id']
+
+                                        list_of_codes.add(f'egenskap=({id})={value}')
         
-        counter: int = int()
-
-        for content in temp_concat_list:
-            print(content)
-        #     space = ''
-
-        #     if counter == 1 and counter <= len( temp_concat_list ) - 2:
-        #         space = ' AND '
-
-        #     temp_concatenated_query += str(content) + space
-
-        #     counter += 1
-        
-        # base_concatenated_query += temp_concatenated_query
-
-        # return base_concatenated_query.replace("<class 'str'>", '')
+        for item in list_of_codes:
+            print(item)
