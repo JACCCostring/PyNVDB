@@ -102,7 +102,7 @@ def test_area_county_code(area_instance):
     assert area_instance.county_code('Vestland') == 46 #vestland
     assert area_instance.county_code('Møre og Romsdal') == 15 #Møre og Romsdal
 
-def test_area_county_name(area_instance, catalog_instance):
+def test_area_county_name(area_instance):
 
     assert area_instance.county_name(11) == 'Rogaland'
     assert area_instance.county_name(46) == 'Vestland'
