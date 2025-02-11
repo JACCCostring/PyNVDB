@@ -1,5 +1,5 @@
 <h1>PyNVDB</h1>
 
-https://img.shields.io/badge/PyTest-PASSED
+![Testing ...](https://badgen.net/badge/PyTest/PASSED/green?icon=github)
 
 This is a Python Library for collecting NVDB data.
