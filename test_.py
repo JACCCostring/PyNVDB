@@ -112,9 +112,14 @@ def test_egenskap_strategy(egenskape_strategy):
 
     egenskape_strategy.set_roadobject_type( 470 )
 
-    egenskape_strategy.filter({'egenskap': {'Type': 'Radio'}})
-    egenskape_strategy.filter({'egenskap': {'DSRC avlesing': 'ITS'}})
-    egenskape_strategy.filter({'egenskap': {'Høyde': 0.34}})
-    egenskape_strategy.filter({'egenskap': {'Etableringsår': 1997}})
+    egenskape_strategy.filter( {'egenskap': 'Type = Radio'} )
+    egenskape_strategy.filter( {'egenskap': 'DSRC avlesing != ITS'} )
+    egenskape_strategy.filter( {'egenskap': 'Høyde < 0.34'} )
+    egenskape_strategy.filter( {'egenskap': 'Etableringsår > 1997'} )
 
-    egenskape_strategy.query('>')
+    list_egenkspa = egenskape_strategy.query()
+
+    assert list_egenkspa[1] == {'id': 3779, 'value': 4822, 'operator': '='}
+    assert list_egenkspa[2] == {'id': 13072, 'value': 22693, 'operator': '!='}
+    assert list_egenkspa[3] == {'id': 3874, 'value': '0.34', 'operator': '<'}
+    assert list_egenkspa[4] == {'id': 4072, 'value': '1997', 'operator': '>'}
