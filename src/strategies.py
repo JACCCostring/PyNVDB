@@ -1,5 +1,5 @@
 from .datacatalog_class import Datacatalog
-# from .utils_class import ConfigManager
+from .area_class import AreaLocation
 from abc import ABC, abstractmethod
 from typing import Protocol
 
@@ -13,10 +13,13 @@ class StrategyType(Protocol):
     def set_roadobject_type(self, type: int) -> None:
         raise NotImplemented
     
+    def _check_sign_operator(self, str_check: str) -> str:
+        raise NotImplemented
+    
     def filter(self, filtr: dict) -> None:
         raise NotImplemented
 
-    def query(self, op: str) -> str:
+    def query(self, op: str) -> list:
         raise NotImplemented
 
 #abstract/interface class
@@ -27,6 +30,7 @@ class Strategy(ABC):
         #protected variables because of inheritance
         self._filters: list = []
         self._roadobjecttype: int = int()
+        self._strategy_type: str = str()
     
     def set_roadobject_type(self, type: int) -> None:
         self._roadobjecttype = type
@@ -45,24 +49,33 @@ class Strategy(ABC):
     def filter(self, filtr: dict) -> None:
         if filtr.get('egenskap'):
             self._filters.append( filtr )
+            self.strategy_type = 'egenskap'
         
         if filtr.get('relasjon'):
             self._filters.append( filtr )
+            self.strategy_type = 'relasjon'
         
         if filtr.get('vegreferanse'):
             self._filters.append( filtr )
+            self.strategy_type = 'vegreferanse'
         
         if filtr.get('kommune'):
             self._filters.append( filtr )
+            self.strategy_type = 'kommune'
         
         if filtr.get('fylke'):
             self._filters.append( filtr )
+            self.strategy_type = 'fylke'
     
+    def strategy_type(self) -> str:
+        if len( self._filters ) > 0:
+            return self.strategy_type
+        
     @abstractmethod
-    def query(self, op: str) -> str:
+    def query(self, op: str) -> list:
         raise NotImplemented
 
-#concreate class
+#concreate class for egenskaper
 class EgenskapStrategy(Strategy):
     def __init__(self):
         super().__init__()
@@ -71,7 +84,6 @@ class EgenskapStrategy(Strategy):
     
     def query(self) -> list[ dict ]:
 
-        # base_concatenated_query: str = f'vegobjekter/{self._roadobjecttype}?egenskap='
         list_of_egenskaper_codes: list = [ dict ]
         value_id: str = str()
 
@@ -89,7 +101,12 @@ class EgenskapStrategy(Strategy):
 
                 operator: str = self._check_sign_operator( chunk )
 
+                '''
+                in the case of a ! operator, then concatenate =
+                to avoid more splits and more code overheads
+                '''
                 if operator == '!':
+
                     operator += '='
 
                 split_chunk: list = chunk.split( operator )
@@ -123,3 +140,55 @@ class EgenskapStrategy(Strategy):
                         })
 
         return list_of_egenskaper_codes
+    
+#concrete class for kommune
+class KommuneStrategy(Strategy):
+    def __init__(self):
+        super().__init__()
+
+        pass
+    
+    def query(self) -> list:
+
+        list_of_kommuner_codes: list = [ dict ]
+        value_id: str = str()
+
+        location = AreaLocation() #area location class for omroader
+            
+        for kommuner in self._filters:
+
+            if kommuner.get('kommune'):
+
+                kommune_name: dict = kommuner.get('kommune')
+
+                kommune_code = location.community_code( kommune_name )
+
+                list_of_kommuner_codes.append( kommune_code )
+
+        return list_of_kommuner_codes
+    
+#concrete class for fylke
+class FylkeStrategy(Strategy):
+    def __init__(self):
+        super().__init__()
+
+        pass
+    
+    def query(self) -> list:
+
+        list_of_fylker_codes: list = [ dict ]
+        value_id: str = str()
+
+        location = AreaLocation() #area location class for omroader
+            
+        for fylker in self._filters:
+
+            if fylker.get('fylke'):
+
+                fylke_name: dict = fylker.get('fylke')
+
+                fylke_code = location.county_code( fylke_name )
+
+                list_of_fylker_codes.append( fylke_code )
+
+        return list_of_fylker_codes
