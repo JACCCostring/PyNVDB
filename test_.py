@@ -5,6 +5,8 @@ from src import Datacatalog
 from src import ConfigManager
 from src import AreaLocation
 from src import EgenskapStrategy
+from src import KommuneStrategy
+from src import FylkeStrategy
 
 @pytest.fixture
 def util_instance():
@@ -26,6 +28,14 @@ def area_instance():
 def egenskape_strategy():
     return EgenskapStrategy()
 
+@pytest.fixture
+def kommune_strategy():
+    return KommuneStrategy()
+
+@pytest.fixture
+def fylke_strategy():
+    return FylkeStrategy()
+
 def test_util_enviroment(util_instance):
 
     # print( util_instance.env )
@@ -45,7 +55,7 @@ def test_config_manager(config_manager):
         "test": "https://nvdbapiles-v3.test.atlas.vegvesen.no/"
     }
 
-def test_catalog_download_to_file_and_resoruces(catalog_instance, config_manager):
+def test_catalog_download_to_file_and_resources(catalog_instance, config_manager):
 
     assert catalog_instance.download_to_file(config_manager.load_config().get('catalog_path')) == True
     assert catalog_instance.isDataCatalogResources() == True
@@ -71,7 +81,7 @@ def test_get_catalog_specific_record(catalog_instance):
     
     assert catalog_instance.especific_record(type_name='Veganlegg')['id'] == 30
 
-def test_area_download_and_resoruces(area_instance):
+def test_area_download_and_resources(area_instance):
 
     assert area_instance.download_area() == True
     assert area_instance.isAreaResources() == True
@@ -123,3 +133,37 @@ def test_egenskap_strategy(egenskape_strategy):
     assert list_egenkspa[2] == {'id': 13072, 'value': 22693, 'operator': '!='}
     assert list_egenkspa[3] == {'id': 3874, 'value': '0.34', 'operator': '<'}
     assert list_egenkspa[4] == {'id': 4072, 'value': '1997', 'operator': '>'}
+
+    assert egenskape_strategy.strategy_type == 'egenskap'
+
+def test_kommune_strategy(kommune_strategy):
+
+    kommune_strategy.filter( {'kommune': 'Haugesund'} )
+    kommune_strategy.filter( {'kommune': 'Karmøy'} )
+    kommune_strategy.filter( {'kommune': 'Sveio'} )
+    kommune_strategy.filter( {'kommune': 'Stavanger'} )
+    kommune_strategy.filter( {'kommune': 'Oslo'} )
+
+    kommuner = kommune_strategy.query()
+
+    assert kommuner[1] == 1106
+    assert kommuner[2] == 1149
+    assert kommuner[3] == 4612
+    assert kommuner[4] == 1103
+    assert kommuner[5] == 301
+
+    assert kommune_strategy.strategy_type == 'kommune'
+
+def test_fylke_strategy(fylke_strategy):
+    
+    fylke_strategy.filter( {'fylke': 'Rogaland'} )
+    fylke_strategy.filter( {'fylke': 'Vestland'} )
+    fylke_strategy.filter( {'fylke': 'Agder'} )
+
+    fylker = fylke_strategy.query()
+
+    assert fylker[1] == 11
+    assert fylker[2] == 46
+    assert fylker[3] == 42
+
+    assert fylke_strategy.strategy_type == 'fylke'
