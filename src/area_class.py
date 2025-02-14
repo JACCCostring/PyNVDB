@@ -100,16 +100,16 @@ class AreaLocation:
             if county['navn'] == name_community:
                 return county['nummer']
     
-    def county_name(self, code_community: int) -> str:
+    def county_name(self, code_county: int) -> str:
         counties = self.counties()
 
         for county in counties:
-            if county['nummer'] == code_community:
+            if county['nummer'] == code_county:
                 return county['navn']
 
-    def county_code(self, name_community: str) -> int:
+    def county_code(self, name_county: str) -> int:
         counties = self.counties()
 
         for county in counties:
-            if county['navn'] == name_community:
+            if county['navn'] == name_county:
                 return county['nummer']
