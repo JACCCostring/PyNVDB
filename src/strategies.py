@@ -55,9 +55,9 @@ class Strategy(ABC):
             self._filters.append( filtr )
             self.strategy_type = 'relasjon'
         
-        if filtr.get('vegreferanse'):
+        if filtr.get('vegsystemreferanse'):
             self._filters.append( filtr )
-            self.strategy_type = 'vegreferanse'
+            self.strategy_type = 'vegsystemreferanse'
         
         if filtr.get('kommune'):
             self._filters.append( filtr )
