@@ -7,6 +7,10 @@ from src import AreaLocation
 from src import EgenskapStrategy
 from src import KommuneStrategy
 from src import FylkeStrategy
+from src import ConsultManager
+from src import EgenskapUriGenerator
+from src import KommuneUriGenerator
+from src import FylkeUriGenerator
 
 @pytest.fixture
 def util_instance():
@@ -35,6 +39,22 @@ def kommune_strategy():
 @pytest.fixture
 def fylke_strategy():
     return FylkeStrategy()
+
+@pytest.fixture
+def consult_instance():
+    return ConsultManager()
+
+@pytest.fixture
+def egenskap_uri_inst():
+    return EgenskapUriGenerator()
+
+@pytest.fixture
+def kommune_uri_inst():
+    return KommuneUriGenerator()
+
+@pytest.fixture
+def fylke_uri_inst():
+    return FylkeUriGenerator()
 
 def test_util_enviroment(util_instance):
 
@@ -167,3 +187,73 @@ def test_fylke_strategy(fylke_strategy):
     assert fylker[3] == 42
 
     assert fylke_strategy.strategy_type == 'fylke'
+
+def test_uri_egenskap_generator(egenskape_strategy, egenskap_uri_inst):
+
+    egenskape_strategy.set_roadobject_type( 470 )
+
+    egenskape_strategy.filter( {'egenskap': 'Type = Radio'} )
+    egenskape_strategy.filter( {'egenskap': 'DSRC avlesing != ITS'} )
+    egenskape_strategy.filter( {'egenskap': 'Høyde < 0.34'} )
+    egenskape_strategy.filter( {'egenskap': 'Etableringsår > 1997'} )
+
+    uri = egenskap_uri_inst.generate_uri( egenskape_strategy )
+
+    assert uri == 'egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<0.34 AND egenskap(4072)>1997'
+
+def test_uri_kommune_generator(kommune_strategy, kommune_uri_inst):
+
+    kommune_strategy.filter( {'kommune': 'Haugesund'} )
+    kommune_strategy.filter( {'kommune': 'Karmøy'} )
+
+    uri = kommune_uri_inst.generate_uri( kommune_strategy )
+
+    assert uri == '1106,1149'
+
+def test_uri_fylke_generator(fylke_uri_inst, fylke_strategy):
+
+    fylke_strategy.filter( {'fylke': 'Rogaland'} )
+    fylke_strategy.filter( {'fylke': 'Vestland'} )
+    fylke_strategy.filter( {'fylke': 'Agder'} )
+
+    uri = fylke_uri_inst.generate_uri( fylke_strategy )
+
+    assert uri == '11,46,42'
+
+def test_consult_manager_add_egenskape_consult(consult_instance, egenskape_strategy):
+
+    egenskape_strategy.set_roadobject_type( 470 )
+
+    egenskape_strategy.filter( {'egenskap': 'Type = Radio'} )
+    egenskape_strategy.filter( {'egenskap': 'DSRC avlesing != ITS'} )
+    egenskape_strategy.filter( {'egenskap': 'Høyde < 0.34'} )
+    egenskape_strategy.filter( {'egenskap': 'Etableringsår > 1997'} )
+
+    consult_instance.add_consult( egenskape_strategy )
+
+    consult_instance.execute()
+
+    consult_instance.records()
+
+def test_consult_manager_add_kommune_consult(consult_instance, kommune_strategy):
+    pytest.skip('not implemented yet')
+    kommune_strategy.set_roadobject_type( 470 )
+
+    kommune_strategy.filter( {'kommune': 'Haugesund'} )
+    kommune_strategy.filter( {'kommune': 'Karmøy'} )
+
+    consult_instance.add_consult( kommune_strategy )
+
+    consult_instance.execute()
+
+def test_consult_manager_add_fylke_consult(consult_instance, fylke_strategy):
+    pytest.skip('not implemented yet')
+    fylke_strategy.set_roadobject_type( 470 )
+
+    fylke_strategy.filter( {'fylke': 'Rogaland'} )
+    fylke_strategy.filter( {'fylke': 'Vestland'} )
+    fylke_strategy.filter( {'fylke': 'Agder'} )
+
+    consult_instance.add_consult( fylke_strategy )
+
+    consult_instance.execute()
