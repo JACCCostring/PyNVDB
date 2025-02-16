@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from .strategies import Strategy
 
-class UriGenerator():
+class UriGenerator(ABC):
     def __init__(self) -> None:
         pass
     
