@@ -192,3 +192,26 @@ class FylkeStrategy(Strategy):
                 list_of_fylker_codes.append( fylke_code )
 
         return list_of_fylker_codes
+
+#concrete class for vegref
+class VegrefStrategy(Strategy):
+    def __init__(self):
+        super().__init__()
+
+        pass
+    
+    def query(self) -> list:
+
+        list_of_vegref: list = [ dict ]
+        value_id: str = str()
+            
+        for vegref in self._filters:
+
+            if vegref.get('vegsystemreferanse'):
+
+                vegref_name: dict = vegref.get('vegsystemreferanse')
+
+                if 'EV' or 'PV' or 'FV' or 'KV' 'RV' in vegref_name:
+                    list_of_vegref.append( vegref_name )
+
+        return list_of_vegref
