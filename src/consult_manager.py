@@ -1,4 +1,5 @@
 from .uri_generator import EgenskapUriGenerator, KommuneUriGenerator, FylkeUriGenerator
+from .utils_class import UtilEnviroment
 from .strategies import Strategy
 
 from enum import Enum
@@ -19,6 +20,7 @@ class ConsultManager:
         self.___uris_completed: list[dict] = []
         self.___road_object_type_id: int = int()
         self.___main_uri: str = str()
+        self.___environ: UtilEnviroment = UtilEnviroment() #test env by default
 
     def add_consult(self, consult: Strategy) -> None:
 
@@ -28,9 +30,21 @@ class ConsultManager:
         else:
             raise Exception('error: Wrong strategy type not supported')
 
+
+    def set_object_type(self, type: int) -> None:
+
+        if self.___road_object_type_id == 0:
+
+            self.___road_object_type_id = type
+
+    def main_uri(self) -> str:
+        
+        return self.___main_uri.replace("&=egenskap=egenskap(dict['id'])dict['operator']dict['value']", '')
+    
     def execute(self) -> None:
 
         for consult in self.___consults:
+
             #egenskap
             if consult.strategy_type == ConsultType.egenskap.value:
                 #proccessing egenskap consults
@@ -82,7 +96,10 @@ class ConsultManager:
         
         uris: list[str] = []
         base_url: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&='
-
+        
+        if self.___road_object_type_id == 0:
+            raise Exception('Error: road object type must be set in one of the strategies or in Consult Manager')
+        
         if len(self.___uris_completed) > 0:
 
             for uri in self.___uris_completed:
@@ -130,12 +147,19 @@ class ConsultManager:
             uri_result: str = str()
 
             for uri_item in uris:
+
                 uri_result += uri_item + '&'
             
             return uri_result.rstrip('&') + '&inkluder=alle'
             
         if len(self.___uris_completed) == 0:
             raise Exception('Error: not consult to process!')
-    
-    def main_uri(self) -> str:
-        return self.___main_uri.replace("&=egenskap=egenskap(dict['id'])dict['operator']dict['value']", '')
+        
+    def records(self) -> list:
+        if self.___main_uri != '':
+            endpoint = self.___environ.env + self.___main_uri
+
+            print(endpoint)
+        
+        if self.___main_uri == '':
+            raise Exception('Error: Consult is not populated yet!')
