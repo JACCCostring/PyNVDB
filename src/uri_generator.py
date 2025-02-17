@@ -86,3 +86,28 @@ class FylkeUriGenerator(UriGenerator):
 
         #removing , at the and, replacing class dict, etc.
         return final_url.rstrip(',').replace("<class 'dict'>", '')
+    
+#uri generator for vegreferanse
+class VegrefUriGenerator(UriGenerator):
+    def __init__(self) -> None:
+        super().__init__()
+
+        pass
+
+    def generate_uri(self, consult: Strategy) -> str:
+        
+        temp_url: str = str()
+
+        for vegref in consult.query():
+
+            temp_str = str(vegref) + ','
+
+            temp_url += temp_str
+
+        #removing , at the begining 
+        temp_url = temp_url.replace("<class 'dict'>", '').lstrip(',')
+        
+        final_url = temp_url
+
+        #removing , at the and, replacing class dict, etc.
+        return final_url.rstrip(',').replace("<class 'dict'>", '')
