@@ -7,10 +7,12 @@ from src import AreaLocation
 from src import EgenskapStrategy
 from src import KommuneStrategy
 from src import FylkeStrategy
+from src import VegrefStrategy
 from src import ConsultManager
 from src import EgenskapUriGenerator
 from src import KommuneUriGenerator
 from src import FylkeUriGenerator
+from src import VegrefUriGenerator
 
 @pytest.fixture
 def util_instance():
@@ -41,6 +43,10 @@ def fylke_strategy():
     return FylkeStrategy()
 
 @pytest.fixture
+def vegref_strategy():
+    return VegrefStrategy()
+
+@pytest.fixture
 def consult_instance():
     return ConsultManager()
 
@@ -55,6 +61,10 @@ def kommune_uri_inst():
 @pytest.fixture
 def fylke_uri_inst():
     return FylkeUriGenerator()
+
+@pytest.fixture
+def vegref_uri_inst():
+    return VegrefUriGenerator()
 
 def test_util_enviroment(util_instance):
 
@@ -188,6 +198,20 @@ def test_fylke_strategy(fylke_strategy):
 
     assert fylke_strategy.strategy_type == 'fylke'
 
+def test_vegref_strategy(vegref_strategy):
+    
+    vegref_strategy.filter( {'vegsystemreferanse': 'EV'} )
+    vegref_strategy.filter( {'vegsystemreferanse': 'PV'} )
+    vegref_strategy.filter( {'vegsystemreferanse': 'RV'} )
+
+    vegrefs = vegref_strategy.query()
+
+    assert vegrefs[1] == 'EV'
+    assert vegrefs[2] == 'PV'
+    assert vegrefs[3] == 'RV'
+
+    assert vegref_strategy.strategy_type == 'vegsystemreferanse'
+
 def test_uri_egenskap_generator(egenskape_strategy, egenskap_uri_inst):
 
     egenskape_strategy.set_roadobject_type( 470 )
@@ -220,40 +244,36 @@ def test_uri_fylke_generator(fylke_uri_inst, fylke_strategy):
 
     assert uri == '11,46,42'
 
-def test_consult_manager_add_egenskape_consult(consult_instance, egenskape_strategy):
+def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy, fylke_strategy, vegref_strategy, vegref_uri_inst):
 
-    egenskape_strategy.set_roadobject_type( 470 )
+    #it's enaugh for any strategy to set road object just once
+    egenskape_strategy.set_roadobject_type( 30 )
 
     egenskape_strategy.filter( {'egenskap': 'Type = Radio'} )
     egenskape_strategy.filter( {'egenskap': 'DSRC avlesing != ITS'} )
     egenskape_strategy.filter( {'egenskap': 'Høyde < 0.34'} )
     egenskape_strategy.filter( {'egenskap': 'Etableringsår > 1997'} )
 
-    consult_instance.add_consult( egenskape_strategy )
-
-    consult_instance.execute()
-
-    consult_instance.records()
-
-def test_consult_manager_add_kommune_consult(consult_instance, kommune_strategy):
-    pytest.skip('not implemented yet')
-    kommune_strategy.set_roadobject_type( 470 )
-
     kommune_strategy.filter( {'kommune': 'Haugesund'} )
     kommune_strategy.filter( {'kommune': 'Karmøy'} )
-
-    consult_instance.add_consult( kommune_strategy )
-
-    consult_instance.execute()
-
-def test_consult_manager_add_fylke_consult(consult_instance, fylke_strategy):
-    pytest.skip('not implemented yet')
-    fylke_strategy.set_roadobject_type( 470 )
 
     fylke_strategy.filter( {'fylke': 'Rogaland'} )
     fylke_strategy.filter( {'fylke': 'Vestland'} )
     fylke_strategy.filter( {'fylke': 'Agder'} )
 
+    vegref_strategy.filter( {'vegsystemreferanse': 'FV'} )
+    vegref_strategy.filter( {'vegsystemreferanse': 'PV'} )
+    vegref_strategy.filter( {'vegsystemreferanse': 'RV'} )
+
+
+    consult_instance.add_consult( egenskape_strategy )
+    consult_instance.add_consult( kommune_strategy )
     consult_instance.add_consult( fylke_strategy )
+    consult_instance.add_consult( vegref_strategy )
 
     consult_instance.execute()
+
+    uri = 'vegobjekter/30?segmentering=true&kommune=1106,1149&fylke=11,46,42&vegsystemreferanse=FV,PV,RV&inkluder=alle'
+    
+    # print( consult_instance.main_uri() )
+    assert consult_instance.main_uri() == uri
