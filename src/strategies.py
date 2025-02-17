@@ -87,6 +87,9 @@ class EgenskapStrategy(Strategy):
         list_of_egenskaper_codes: list = [ dict ]
         value_id: str = str()
 
+        if self._roadobjecttype == 0:
+            raise Exception(f'Error: road object type unknown {self._roadobjecttype}')
+        
         catalog = Datacatalog()
 
         record = catalog.especific_record( type_id=self._roadobjecttype ) #a record
