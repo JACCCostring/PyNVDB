@@ -28,8 +28,9 @@ class EgenskapUriGenerator(UriGenerator):
             temp_value = egenskap['value']
 
             temp_str = f'egenskap({temp_id}){temp_op}{temp_value} AND '
-
             temp_url += temp_str
+
+            temp_str = ''
         
         garbage = "egenskap(dict['id'])dict['operator']dict['value'] AND"
 
