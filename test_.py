@@ -1,5 +1,3 @@
-import pytest
-
 from src import UtilEnviroment
 from src import Datacatalog
 from src import ConfigManager
@@ -13,6 +11,8 @@ from src import EgenskapUriGenerator
 from src import KommuneUriGenerator
 from src import FylkeUriGenerator
 from src import VegrefUriGenerator
+
+import pytest
 
 @pytest.fixture
 def util_instance():
@@ -244,10 +244,20 @@ def test_uri_fylke_generator(fylke_uri_inst, fylke_strategy):
 
     assert uri == '11,46,42'
 
-def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy, fylke_strategy, vegref_strategy, vegref_uri_inst):
+def test_uri_vegref_generator(vegref_strategy, vegref_uri_inst):
+    
+    vegref_strategy.filter( {'vegsystemreferanse': 'EV'} )
+    vegref_strategy.filter( {'vegsystemreferanse': 'PV'} )
+    vegref_strategy.filter( {'vegsystemreferanse': 'RV'} )
+
+    uri = vegref_uri_inst.generate_uri( vegref_strategy )
+
+    assert uri == 'EV,PV,RV'
+
+def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy, fylke_strategy, vegref_strategy):
 
     #it's enaugh for any strategy to set road object just once
-    egenskape_strategy.set_roadobject_type( 30 )
+    egenskape_strategy.set_roadobject_type( 470 )
 
     egenskape_strategy.filter( {'egenskap': 'Type = Radio'} )
     egenskape_strategy.filter( {'egenskap': 'DSRC avlesing != ITS'} )
@@ -273,7 +283,8 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
 
     consult_instance.execute()
 
-    uri = 'vegobjekter/30?segmentering=true&kommune=1106,1149&fylke=11,46,42&vegsystemreferanse=FV,PV,RV&inkluder=alle'
+    uri = 'vegobjekter/470?segmentering=true&=egenskap=egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<0.34 AND egenskap(4072)>1997&kommune=1106,1149&fylke=11,46,42&vegsystemreferanse=FV,PV,RV&inkluder=alle'
     
-    # print( consult_instance.main_uri() )
+    # print(consult_instance.main_uri())
+    consult_instance.records()
     assert consult_instance.main_uri() == uri
