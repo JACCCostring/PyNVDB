@@ -22,6 +22,7 @@ class ConsultManager:
         self.___main_uri: str = str()
         self.___environ: UtilEnviroment = UtilEnviroment() #test env by default
 
+
     def add_consult(self, consult: Strategy) -> None:
 
         if isinstance(consult, Strategy):
@@ -37,10 +38,12 @@ class ConsultManager:
 
             self.___road_object_type_id = type
 
+
     def main_uri(self) -> str:
         
         return self.___main_uri.replace("&=egenskap=egenskap(dict['id'])dict['operator']dict['value']", '')
     
+
     def execute(self) -> None:
 
         for consult in self.___consults:
@@ -92,57 +95,30 @@ class ConsultManager:
         #substract main URI and store it, for later
         self.___main_uri = self.___substract_uri()
 
+
     def ___substract_uri(self) -> list:
-        
+
         uris: list[str] = []
+
+        #base url segments are True by default, it can changes later
         base_url: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&='
         
         if self.___road_object_type_id == 0:
             raise Exception('Error: road object type must be set in one of the strategies or in Consult Manager')
         
+        #if it has uris
         if len(self.___uris_completed) > 0:
 
             for uri in self.___uris_completed:
 
-                if uri.get('type') == ConsultType.egenskap:
+                type = uri.get('type').value #enum type and access value
+                value = uri.get('uri')
 
-                    target = uri.get('uri')
+                base_url += f'{type}={value}'
 
-                    base_url += f'egenskap={target}'
+                uris.append( base_url )
 
-                    uris.append( base_url )
-
-                    base_url = ''
-
-                if uri.get('type') == ConsultType.kommune:
-
-                    target = uri.get('uri')
-
-                    base_url += f'kommune={target}'
-
-                    uris.append( base_url )
-
-                    base_url = ''
-
-                if uri.get('type') == ConsultType.fylke:
-
-                    target = uri.get('uri')
-
-                    base_url += f'fylke={target}'
-
-                    uris.append( base_url )
-
-                    base_url = ''
-                
-                if uri.get('type') == ConsultType.vegsystemreferanse:
-
-                    target = uri.get('uri')
-
-                    base_url += f'vegsystemreferanse={target}'
-
-                    uris.append( base_url )
-
-                    base_url = ''
+                base_url = ''
 
             uri_result: str = str()
 
@@ -150,16 +126,20 @@ class ConsultManager:
 
                 uri_result += uri_item + '&'
             
-            return uri_result.rstrip('&') + '&inkluder=alle'
-            
+            return uri_result.rstrip('&') + '&inkluder=alle' #including all
+        
+        #if not then raise exception
         if len(self.___uris_completed) == 0:
             raise Exception('Error: not consult to process!')
         
+
     def records(self) -> list:
         if self.___main_uri != '':
             endpoint = self.___environ.env + self.___main_uri
 
             print(endpoint)
+            #get pagination data async
+            #go through all endpoints of pagination data async
         
         if self.___main_uri == '':
             raise Exception('Error: Consult is not populated yet!')
