@@ -258,22 +258,24 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
 
     #it's enaugh for any strategy to set road object just once
     egenskape_strategy.set_roadobject_type( 470 )
-
+    
+    # egenskape_strategy.filter( {'egenskap': 'Bruksområde = Belysning veg/gate'} )
     egenskape_strategy.filter( {'egenskap': 'Type = Radio'} )
     egenskape_strategy.filter( {'egenskap': 'DSRC avlesing != ITS'} )
-    egenskape_strategy.filter( {'egenskap': 'Høyde < 0.34'} )
-    egenskape_strategy.filter( {'egenskap': 'Etableringsår > 1997'} )
+    egenskape_strategy.filter( {'egenskap': 'Høyde < 10'} )
+    egenskape_strategy.filter( {'egenskap': 'Etableringsår > 1980'} )
 
     kommune_strategy.filter( {'kommune': 'Haugesund'} )
-    kommune_strategy.filter( {'kommune': 'Karmøy'} )
+    # kommune_strategy.filter( {'kommune': 'Karmøy'} )
 
     fylke_strategy.filter( {'fylke': 'Rogaland'} )
-    fylke_strategy.filter( {'fylke': 'Vestland'} )
-    fylke_strategy.filter( {'fylke': 'Agder'} )
+    # fylke_strategy.filter( {'fylke': 'Vestland'} )
+    # fylke_strategy.filter( {'fylke': 'Agder'} )
 
-    vegref_strategy.filter( {'vegsystemreferanse': 'FV'} )
-    vegref_strategy.filter( {'vegsystemreferanse': 'PV'} )
-    vegref_strategy.filter( {'vegsystemreferanse': 'RV'} )
+    # vegref_strategy.filter( {'vegsystemreferanse': 'FV'} )
+    # vegref_strategy.filter( {'vegsystemreferanse': 'PV'} )
+    # vegref_strategy.filter( {'vegsystemreferanse': 'RV'} )
+    vegref_strategy.filter( {'vegsystemreferanse': 'KV'} )
 
 
     consult_instance.add_consult( egenskape_strategy )
@@ -281,10 +283,14 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
     consult_instance.add_consult( fylke_strategy )
     consult_instance.add_consult( vegref_strategy )
 
+    # consult_instance.set_object_type( 87 )
     consult_instance.execute()
 
-    uri = 'vegobjekter/470?segmentering=true&=egenskap=egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<0.34 AND egenskap(4072)>1997&kommune=1106,1149&fylke=11,46,42&vegsystemreferanse=FV,PV,RV&inkluder=alle'
+    uri = 'vegobjekter/470?segmentering=true&egenskap=egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980&kommune=1106&fylke=11&vegsystemreferanse=KV&inkluder=alle'
     
     # print(consult_instance.main_uri())
-    consult_instance.records()
+    # consult_instance.records()
     assert consult_instance.main_uri() == uri
+    assert len (consult_instance.records()) == 2
+    assert consult_instance.records()[0].nvdbid == 893889087
+    assert consult_instance.records()[1].nvdbid == 893889089
