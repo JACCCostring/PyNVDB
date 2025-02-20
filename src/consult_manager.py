@@ -1,4 +1,5 @@
 from .uri_generator import EgenskapUriGenerator, KommuneUriGenerator, FylkeUriGenerator
+from .nvdb_rest_paginator import NVDB_REST_Paginator
 from .utils_class import UtilEnviroment
 from .strategies import Strategy
 
@@ -47,7 +48,6 @@ class ConsultManager:
     def execute(self) -> None:
 
         for consult in self.___consults:
-
             #egenskap
             if consult.strategy_type == ConsultType.egenskap.value:
                 #proccessing egenskap consults
@@ -101,7 +101,7 @@ class ConsultManager:
         uris: list[str] = []
 
         #base url segments are True by default, it can changes later
-        base_url: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&='
+        base_url: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&'
         
         if self.___road_object_type_id == 0:
             raise Exception('Error: road object type must be set in one of the strategies or in Consult Manager')
@@ -134,12 +134,13 @@ class ConsultManager:
         
 
     def records(self) -> list:
+
         if self.___main_uri != '':
             endpoint = self.___environ.env + self.___main_uri
 
-            print(endpoint)
-            #get pagination data async
-            #go through all endpoints of pagination data async
+            nvdb_paginator = NVDB_REST_Paginator( endpoint )
+
+            return nvdb_paginator.nvdb_data()
         
         if self.___main_uri == '':
             raise Exception('Error: Consult is not populated yet!')
