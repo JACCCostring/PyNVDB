@@ -286,7 +286,7 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
     # consult_instance.set_object_type( 87 )
     consult_instance.execute()
 
-    uri = 'vegobjekter/470?segmentering=true&egenskap=egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980&kommune=1106&fylke=11&vegsystemreferanse=KV&inkluder=alle'
+    uri = 'vegobjekter/470?segmentering=true&egenskap=egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980&kommune=1106&fylke=11&vegsystemreferanse=KV'
     
     # print(consult_instance.main_uri())
     # consult_instance.records()
