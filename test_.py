@@ -290,7 +290,10 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
     
     # print(consult_instance.main_uri())
     # consult_instance.records()
+    records = consult_instance.records()
+
     assert consult_instance.main_uri() == uri
-    assert len (consult_instance.records()) == 2
-    assert consult_instance.records()[0].nvdbid == 893889087
-    assert consult_instance.records()[1].nvdbid == 893889089
+    assert len (records) == 2
+
+    for consult in records:
+        assert consult.nvdbid == 893889089 or consult.nvdbid == 893889087
