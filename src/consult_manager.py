@@ -20,9 +20,8 @@ class ConsultManager:
         self.___consults: list[Strategy] = []
         self.___uris_completed: list[dict] = []
         self.___road_object_type_id: int = int()
-        self.___main_uri: str = str()
+        self.___main_uri: str = str('')
         self.___environ: UtilEnviroment = UtilEnviroment() #test env by default
-
 
     def add_consult(self, consult: Strategy) -> None:
 
@@ -33,11 +32,18 @@ class ConsultManager:
             raise Exception('error: Wrong strategy type not supported')
 
 
-    def set_object_type(self, type: int) -> None:
+    def set_roadobject_type(self, type: int) -> None:
 
         if self.___road_object_type_id == 0:
 
             self.___road_object_type_id = type
+
+            if self.___main_uri == '':
+                '''
+                    making sure that main_uri has a value or valid endpoint, in case
+                    of non strategy consult is especified
+                '''
+                self.___main_uri: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&'
 
 
     def main_uri(self) -> str:
@@ -92,8 +98,13 @@ class ConsultManager:
                 if self.___road_object_type_id == 0:
                     self.___road_object_type_id = consult._roadobjecttype
 
-        #substract main URI and store it, for later
-        self.___main_uri = self.___substract_uri()
+        '''
+            substract main URI and store it, for later and making
+            sure that self.___main_uri will be only filled if
+            there are consults to make
+        '''
+        if len( self.___consults ) > 0:
+            self.___main_uri = self.___substract_uri()
 
 
     def ___substract_uri(self) -> list:
@@ -126,17 +137,17 @@ class ConsultManager:
 
                 uri_result += uri_item + '&'
             
-            return uri_result.rstrip('&') + '&inkluder=alle' #including all
+            return uri_result.rstrip('&') #+ '&inkluder=alle' #including all
         
         #if not then raise exception
-        if len(self.___uris_completed) == 0:
+        if len(self.___uris_completed) and self.___road_object_type_id == 0:
             raise Exception('Error: not consult to process!')
         
 
     def records(self) -> list:
 
         if self.___main_uri != '':
-            endpoint = self.___environ.env + self.___main_uri
+            endpoint: str = self.___environ.env + self.___main_uri
 
             nvdb_paginator = NVDB_REST_Paginator( endpoint )
 
