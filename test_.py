@@ -258,7 +258,7 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
 
     egenskape_strategy.set_roadobject_type( 470 )
     
-    # egenskape_strategy.filter( {'egenskap': 'Bruksområde = Belysning veg/gate'} )
+    egenskape_strategy.filter( {'egenskap': 'Bruksområde = Belysning veg/gate'} )
     egenskape_strategy.filter( {'egenskap': 'Type = Radio'} )
     egenskape_strategy.filter( {'egenskap': 'DSRC avlesing != ITS'} )
     egenskape_strategy.filter( {'egenskap': 'Høyde < 10'} )
@@ -284,7 +284,7 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
     consult_instance.add_consult( fylke_strategy )
     consult_instance.add_consult( vegref_strategy )
 
-    # consult_instance.set_roadobject_type( 470 )
+    # consult_instance.set_roadobject_type( 86 )
     consult_instance.execute()
 
     uri = 'vegobjekter/470?segmentering=true&egenskap=egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980&kommune=1106&fylke=11&vegsystemreferanse=KV&inkluder=metadata,geometri'
@@ -295,5 +295,4 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
     assert len (records) == 2
 
     for consult in records:
-        print(consult.nvdbid)
         assert consult.nvdbid == 893889089 or consult.nvdbid == 893889087
