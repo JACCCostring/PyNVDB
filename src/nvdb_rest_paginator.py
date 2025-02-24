@@ -62,20 +62,20 @@ class NVDB_REST_Paginator:
             some times return data amount and total data amaount
             if divide it is equal to 1 or 2 then we need to trick to get
             that amount + 1, because of the loop, so we can get enough iterations
-            to get all task
+            to get all task, so may be next endpoint could be the start point,
+            since we dont need to fetch next endpoint because we're only getting
+            800 or less amount
         '''
-        help_amount = self.___current_amount - 1 if int( self.___page_amount / self.___current_amount ) <= 2 else 0
-
-        print(help_amount)
+        if self.___current_amount <= 800:
+            next_endpoint = self.___start_endpoint
 
         print()
         print('starting ...')
         print('fetching', self.___page_amount, 'vegobjekter')
 
         async with aiohttp.ClientSession() as session:
-            for _ in range( int( self.___page_amount / self.___current_amount ) + help_amount ):
+            for _ in range( int( self.___page_amount / self.___current_amount ) ):
                 
-                # print(next_endpoint)
                 print(self.___current_amount, ' of ', self.___page_amount)
 
                 task = asyncio.create_task( self.___getandparse_nvdb_data(next_endpoint, session) )
@@ -85,8 +85,9 @@ class NVDB_REST_Paginator:
                 next_endpoint = next_pag['neste']['href']
 
                 # self.___current_amount += 1000 if first_pag['returnert'] <= 1000 else first_pag['returnert']
-                self.___current_amount += first_pag['returnert']
+                self.___current_amount += next_pag['returnert']
 
+                # print(next_endpoint)
                 
             print('ending fetch ...')
             responses_coro = await asyncio.gather( *tasks )
