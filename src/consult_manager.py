@@ -17,6 +17,7 @@ class ConsultType(Enum):
 class ConsultManager:
 
     def __init__(self) -> None:
+
         self.___consults: list[Strategy] = []
         self.___uris_completed: list[dict] = []
         self.___road_object_type_id: int = int()
@@ -38,12 +39,14 @@ class ConsultManager:
 
             self.___road_object_type_id = type
 
+            '''
+            making sure that main_uri has a value or valid endpoint, in case
+            of non strategy consult is especified and object type was set from
+            consult manager and not from a strategy
+            '''
             if self.___main_uri == '':
-                '''
-                    making sure that main_uri has a value or valid endpoint, in case
-                    of non strategy consult is especified
-                '''
-                self.___main_uri: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&'
+            
+                self.___main_uri: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&inkluder=alle,geometri'
 
 
     def main_uri(self) -> str:
@@ -137,7 +140,7 @@ class ConsultManager:
 
                 uri_result += uri_item + '&'
             
-            return uri_result.rstrip('&') #+ '&inkluder=alle' #including all
+            return uri_result.rstrip('&') + '&inkluder=metadata,geometri' #including metadata and geometry
         
         #if not then raise exception
         if len(self.___uris_completed) and self.___road_object_type_id == 0:
@@ -147,10 +150,11 @@ class ConsultManager:
     def records(self) -> list:
 
         if self.___main_uri != '':
+
             endpoint: str = self.___environ.env + self.___main_uri
 
             nvdb_paginator = NVDB_REST_Paginator( endpoint )
-
+            
             return nvdb_paginator.nvdb_data()
         
         if self.___main_uri == '':
