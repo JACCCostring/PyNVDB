@@ -256,7 +256,6 @@ def test_uri_vegref_generator(vegref_strategy, vegref_uri_inst):
 
 def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy, fylke_strategy, vegref_strategy):
 
-    #it's enaugh for any strategy to set road object just once
     egenskape_strategy.set_roadobject_type( 470 )
     
     # egenskape_strategy.filter( {'egenskap': 'Bruksområde = Belysning veg/gate'} )
@@ -277,23 +276,24 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
     # vegref_strategy.filter( {'vegsystemreferanse': 'RV'} )
     vegref_strategy.filter( {'vegsystemreferanse': 'KV'} )
 
+    # vegref_strategy.filter( {'vegsystemreferanse': 'EV'} )
+
 
     consult_instance.add_consult( egenskape_strategy )
     consult_instance.add_consult( kommune_strategy )
     consult_instance.add_consult( fylke_strategy )
     consult_instance.add_consult( vegref_strategy )
 
-    # consult_instance.set_object_type( 87 )
+    # consult_instance.set_roadobject_type( 470 )
     consult_instance.execute()
 
-    uri = 'vegobjekter/470?segmentering=true&egenskap=egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980&kommune=1106&fylke=11&vegsystemreferanse=KV'
+    uri = 'vegobjekter/470?segmentering=true&egenskap=egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980&kommune=1106&fylke=11&vegsystemreferanse=KV&inkluder=metadata,geometri'
     
-    # print(consult_instance.main_uri())
-    # consult_instance.records()
     records = consult_instance.records()
 
     assert consult_instance.main_uri() == uri
     assert len (records) == 2
 
     for consult in records:
+        print(consult.nvdbid)
         assert consult.nvdbid == 893889089 or consult.nvdbid == 893889087
