@@ -11,6 +11,7 @@ from src import EgenskapUriGenerator
 from src import KommuneUriGenerator
 from src import FylkeUriGenerator
 from src import VegrefUriGenerator
+from src import StrategyBuilder
 
 import pytest
 
@@ -65,6 +66,10 @@ def fylke_uri_inst():
 @pytest.fixture
 def vegref_uri_inst():
     return VegrefUriGenerator()
+
+@pytest.fixture
+def strategy_builder_instance():
+    return StrategyBuilder()
 
 def test_util_enviroment(util_instance):
 
@@ -296,3 +301,26 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
 
     for consult in records:
         assert consult.nvdbid == 893889089 or consult.nvdbid == 893889087
+
+def test_strategy_builder(strategy_builder_instance, fylke_strategy, egenskape_strategy):
+    
+    fylke_strategy.filter( {'fylke': 'Oslo'} )
+    fylke_strategy.filter( {'fylke': 'Rogaland'} )
+    fylke_strategy.filter( {'fylke': 'Vestland'} )
+
+    egenskape_strategy.set_roadobject_type( 470 )
+    
+    egenskape_strategy.filter( {'egenskap': 'Bruksområde = Belysning veg/gate'} )
+    egenskape_strategy.filter( {'egenskap': 'Type = Radio'} )
+    egenskape_strategy.filter( {'egenskap': 'DSRC avlesing != ITS'} )
+    egenskape_strategy.filter( {'egenskap': 'Høyde < 10'} )
+    egenskape_strategy.filter( {'egenskap': 'Etableringsår > 1980'} )
+
+    strategy_builder_instance.add_strategy( fylke_strategy )
+    strategy_builder_instance.add_strategy( egenskape_strategy )
+
+    fylke = strategy_builder_instance.get_strategy_uri( fylke_strategy )
+    egenskap = strategy_builder_instance.get_strategy_uri( egenskape_strategy )
+
+    assert fylke == '3,11,46'
+    assert egenskap == 'egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980'
