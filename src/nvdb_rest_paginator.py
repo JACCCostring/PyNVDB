@@ -71,17 +71,24 @@ class NVDB_REST_Paginator:
 
         print()
         print('starting ...')
+
         print('fetching', self.___page_amount, 'vegobjekter')
 
         async with aiohttp.ClientSession() as session:
+
             for _ in range( int( self.___page_amount / self.___current_amount ) ):
                 
-                print(self.___current_amount, ' of ', self.___page_amount)
+                #only show stats each 1000 fetched road objects
+                if self.___current_amount % 1000 == 0:
+
+                    print(self.___current_amount, ' of ', self.___page_amount)
 
                 task = asyncio.create_task( self.___getandparse_nvdb_data(next_endpoint, session) )
+
                 tasks.append( task )
 
                 next_pag = await self.___next_pagination(next_endpoint, session)
+
                 next_endpoint = next_pag['neste']['href']
 
                 # self.___current_amount += 1000 if first_pag['returnert'] <= 1000 else first_pag['returnert']
@@ -96,10 +103,6 @@ class NVDB_REST_Paginator:
             for response in responses_coro:
                 self.___populate_nvdb_data( response )
 
-        for item in self.___records:
-            if item.nvdbid == 460057601:
-                print('id:', item.nvdbid, ' wkt:', item.geometry)
-
     async def ___first_pagination(self) -> None:
         async with aiohttp.ClientSession() as session:
             response = await session.get( self.___start_endpoint, headers=ConfigManager().load_config().get('test_headers') )
@@ -109,6 +112,7 @@ class NVDB_REST_Paginator:
                 return data['metadata']
     
     async def ___next_pagination(self, endpoint, session) -> None:
+
         async with session.get( endpoint, headers=ConfigManager().load_config().get('test_headers') ) as response:
 
             if response.ok:
