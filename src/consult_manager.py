@@ -1,5 +1,6 @@
-from .uri_generator import EgenskapUriGenerator, KommuneUriGenerator, FylkeUriGenerator
+# from .uri_generator import EgenskapUriGenerator, KommuneUriGenerator, FylkeUriGenerator
 from .nvdb_rest_paginator import NVDB_REST_Paginator
+from .strategy_builder import StrategyBuilder
 from .utils_class import UtilEnviroment
 from .strategies import Strategy
 
@@ -7,6 +8,7 @@ from enum import Enum
 
 #Enum for consult types
 class ConsultType(Enum):
+    
     egenskap = 'egenskap'
     relasjon = 'relasjon'
     vegsystemreferanse = 'vegsystemreferanse'
@@ -58,6 +60,7 @@ class ConsultManager:
 
         for consult in self.___consults:
             #egenskap
+            '''
             if consult.strategy_type == ConsultType.egenskap.value:
                 #proccessing egenskap consults
                 uri = EgenskapUriGenerator().generate_uri( consult )
@@ -99,7 +102,20 @@ class ConsultManager:
 
                 #init.. on any iteration, only if it's not set from before on any of the strategy type
                 if self.___road_object_type_id == 0:
-                    self.___road_object_type_id = consult._roadobjecttype
+                    self.___road_object_type_id = consult._roadobjecttype '''
+
+            #new strategy builder improvements
+            builder = StrategyBuilder()
+
+            builder.add_strategy( consult )
+
+            uri = builder.get_strategy_uri( consult )
+
+            self.___uris_completed.append( {'uri': uri, 'type': consult.strategy_type } )
+
+            if self.___road_object_type_id == 0:
+
+                self.___road_object_type_id = consult._roadobjecttype
 
         '''
             substract main URI and store it, for later and making
@@ -109,6 +125,10 @@ class ConsultManager:
         if len( self.___consults ) > 0:
             self.___main_uri = self.___substract_uri()
 
+        #otherwise then just add vegobjekt, segmentering og inkluder
+        if len( self.___consults ) == 0:
+
+            self.___main_uri: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&inkluder=alle,geometri'
 
     def ___substract_uri(self) -> list:
 
@@ -125,7 +145,8 @@ class ConsultManager:
 
             for uri in self.___uris_completed:
 
-                type = uri.get('type').value #enum type and access value
+                # type = uri.get('type').value #enum type and access value
+                type = uri.get('type')
                 value = uri.get('uri')
 
                 base_url += f'{type}={value}'
