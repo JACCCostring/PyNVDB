@@ -46,7 +46,7 @@ class Strategy(ABC):
             if '<' in check:
                 return check;
 
-    def filter(self, filtr: dict) -> None:
+    def filter(self, filtr: dict[str, str]) -> None:
         if filtr.get('egenskap'):
             self._filters.append( filtr )
             self.strategy_type = 'egenskap'
