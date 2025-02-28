@@ -1,5 +1,10 @@
+from .uri_generator import EgenskapUriGenerator
+from .uri_generator import KommuneUriGenerator
+from .uri_generator import VegrefUriGenerator
+from .uri_generator import FylkeUriGenerator
+from .uri_generator import UriGenerator
 from .strategies import Strategy
-from .uri_generator import UriGenerator, EgenskapUriGenerator, FylkeUriGenerator, KommuneUriGenerator, VegrefUriGenerator
+
 from typing import List
 
 class StrategyBuilder:
@@ -18,11 +23,13 @@ class StrategyBuilder:
         #adding default promotions
         self.___strategies_promotion.append( default_promotions )
     
-    def promote_strategy(self, new_promotion: str) -> None:
+    def promote_strategy(self, new_promotion: dict[str, UriGenerator]) -> None:
         if new_promotion in self.___strategies_promotion:
-            raise Exception('Error: prmotion already exist!')
+            raise Exception('Error: promotion already exist!')
         
-        # if new_promotion not in self.___strategies_promotion:
+        if isinstance( new_promotion, dict[str, UriGenerator] ):
+            raise Exception('Error: wrong promotion type!')
+        # only added if new_promotion is a promotion expected type
         self.___strategies_promotion.append( new_promotion )
 
     def add_strategy(self, strategy: Strategy) -> None:
