@@ -84,7 +84,7 @@ class NVDB_REST_Paginator:
                     print(self.___current_amount, ' of ', self.___page_amount)
 
                 task = asyncio.create_task( self.___getandparse_nvdb_data(next_endpoint, session) )
-
+                
                 tasks.append( task )
 
                 next_pag = await self.___next_pagination(next_endpoint, session)
