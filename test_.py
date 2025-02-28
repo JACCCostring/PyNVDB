@@ -12,6 +12,7 @@ from src import KommuneUriGenerator
 from src import FylkeUriGenerator
 from src import VegrefUriGenerator
 from src import StrategyBuilder
+from src import QueryManager
 
 import pytest
 
@@ -70,6 +71,10 @@ def vegref_uri_inst():
 @pytest.fixture
 def strategy_builder_instance():
     return StrategyBuilder()
+
+@pytest.fixture
+def query_manager_inst():
+    return QueryManager()
 
 def test_util_enviroment(util_instance):
 
@@ -324,3 +329,14 @@ def test_strategy_builder(strategy_builder_instance, fylke_strategy, egenskape_s
 
     assert fylke == '3,11,46'
     assert egenskap == 'egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980'
+
+def test_query_manager(query_manager_inst):
+
+    query_manager_inst.set_road_onjecttype( 470 )
+
+    query_manager_inst.filter( {'egenskap': 'Bruksområde = Belysning veg/gate'} )
+    query_manager_inst.filter( {'fylke': 'Oslo'} )
+    query_manager_inst.filter( {'kommune': 'Haugesund'} )
+    query_manager_inst.filter( {'vegsystemreferanse': 'KV'} )
+
+    print( len( query_manager_inst.records() ) )
