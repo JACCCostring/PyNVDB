@@ -1,4 +1,3 @@
-# from .uri_generator import EgenskapUriGenerator, KommuneUriGenerator, FylkeUriGenerator
 from .nvdb_rest_paginator import NVDB_REST_Paginator
 from .strategy_builder import StrategyBuilder
 from .utils_class import UtilEnviroment
@@ -34,7 +33,6 @@ class ConsultManager:
         else:
             raise Exception('error: Wrong strategy type not supported')
 
-
     def set_roadobject_type(self, type: int) -> None:
 
         if self.___road_object_type_id == 0:
@@ -50,12 +48,10 @@ class ConsultManager:
             
                 self.___main_uri: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&inkluder=alle,geometri'
 
-
     def main_uri(self) -> str:
         
         return self.___main_uri.replace("&=egenskap=egenskap(dict['id'])dict['operator']dict['value']", '')
     
-
     def execute(self) -> None:
 
         for consult in self.___consults:
@@ -166,7 +162,6 @@ class ConsultManager:
         #if not then raise exception
         if len(self.___uris_completed) and self.___road_object_type_id == 0:
             raise Exception('Error: not consult to process!')
-        
 
     def records(self) -> list:
 
