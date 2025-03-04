@@ -47,6 +47,7 @@ class Strategy(ABC):
                 return check;
 
     def filter(self, filtr: dict[str, str]) -> None:
+        
         if filtr.get('egenskap'):
             self._filters.append( filtr )
             self.strategy_type = 'egenskap'
@@ -66,7 +67,14 @@ class Strategy(ABC):
         if filtr.get('fylke'):
             self._filters.append( filtr )
             self.strategy_type = 'fylke'
-    
+
+    #method for when using list or multiple in one call of values insted of only a single value
+    def filters(self, filtrs: dict[str, list[ dict[str, str] ] ]) -> None:
+
+        for filter_name, filter_list in filtrs.items():
+            for filter in filter_list:
+                self.filter( {filter_name: filter} )
+            
     def strategy_type(self) -> str:
         if len( self._filters ) > 0:
             return self.strategy_type
@@ -141,7 +149,7 @@ class EgenskapStrategy(Strategy):
                             'value': value_id, #value of that egenskap id
                             'operator': operator
                         })
-
+            
         return list_of_egenskaper_codes
     
 #concrete class for kommune
