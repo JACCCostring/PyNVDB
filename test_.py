@@ -360,9 +360,13 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
     
     records = consult_instance.records()
 
+    #checking that we are getting same uri
     assert consult_instance.main_uri() == uri
+
+    #checking that we are getting only 2 vegobjekter
     assert len (records) == 2
 
+    #checking that we are getting specific vegobjekter nvdbids
     for consult in records:
         assert consult.nvdbid == 893889089 or consult.nvdbid == 893889087
 
@@ -389,7 +393,7 @@ def test_strategy_builder(strategy_builder_instance, fylke_strategy, egenskape_s
     assert fylke == '3,11,46'
     assert egenskap == 'egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980'
 
-def test_query_manager(query_manager_inst):
+def test_query_manager(query_manager_inst, consult_instance):
 
     query_manager_inst.set_road_onjecttype( 470 )
 
@@ -403,6 +407,19 @@ def test_query_manager(query_manager_inst):
 
     query_manager_inst.filter( {'vegsystemreferanse': 'KV'} )
 
-    # assert len( query_manager_inst.records() ) == 2
+    consult_instance.add_query( query_manager_inst )
 
-    query_manager_inst.records()
+    consult_instance.execute()
+    
+    uri = 'vegobjekter/470?segmentering=true&egenskap=egenskap(3779)=4822 AND egenskap(4072)>1980&fylke=11,46&kommune=1106&vegsystemreferanse=KV&inkluder=metadata,geometri'
+    
+    records = consult_instance.records()
+
+    assert consult_instance.main_uri() == uri
+
+    #checking that 2 vegobjekter in records
+    assert len( records ) == 2
+
+    #checking that we are getting specific vegobjekter nvdbids
+    for consult in records:
+        assert consult.nvdbid == 893889089 or consult.nvdbid == 893889087
