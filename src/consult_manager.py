@@ -1,18 +1,8 @@
 from .nvdb_rest_paginator import NVDB_REST_Paginator
 from .strategy_builder import StrategyBuilder
+from .query_manager import QueryManager
 from .utils_class import UtilEnviroment
 from .strategies import Strategy
-
-from enum import Enum
-
-#Enum for consult types
-class ConsultType(Enum):
-    
-    egenskap = 'egenskap'
-    relasjon = 'relasjon'
-    vegsystemreferanse = 'vegsystemreferanse'
-    kommune = 'kommune'
-    fylke = 'fylke'
 
 #class Consult Manager for managing consults
 class ConsultManager:
@@ -32,6 +22,18 @@ class ConsultManager:
 
         else:
             raise Exception('error: Wrong strategy type not supported')
+    
+    def add_query(self, query_manager: QueryManager) -> None:
+        #executing all queries to generate strategies
+        query_manager.execute()
+
+        #getting list of strategies
+        strategies = query_manager.strategies()
+
+        #looping through
+        for strategy in strategies:
+            #adding strategy
+            self.add_consult( strategy )
 
     def set_roadobject_type(self, type: int) -> None:
 
