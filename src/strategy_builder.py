@@ -27,10 +27,12 @@ class StrategyBuilder:
         if new_promotion in self.___strategies_promotion:
             raise Exception('Error: promotion already exist!')
         
-        if isinstance( new_promotion, dict[str, UriGenerator] ):
+        if not isinstance( new_promotion, dict):
             raise Exception('Error: wrong promotion type!')
         # only added if new_promotion is a promotion expected type
         self.___strategies_promotion.append( new_promotion )
+
+        print(self.___strategies_promotion)
 
     def add_strategy(self, strategy: Strategy) -> None:
 
