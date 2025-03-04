@@ -222,6 +222,65 @@ def test_vegref_strategy(vegref_strategy):
 
     assert vegref_strategy.strategy_type == 'vegsystemreferanse'
 
+
+def test_egenskap_strategy_list(egenskape_strategy):
+
+    egenskape_strategy.set_roadobject_type( 470 )
+
+    egenskape_strategy.filters({'egenskap': [
+        'Type = Radio',
+        'DSRC avlesing != ITS',
+        'Høyde < 0.34',
+        'Etableringsår > 1997'
+    ]})
+
+    query = egenskape_strategy.query()
+
+    assert query[1] == {'id': 3779, 'value': 4822, 'operator': '='}
+    assert query[2] == {'id': 13072, 'value': 22693, 'operator': '!='}
+    assert query[3] == {'id': 3874, 'value': '0.34', 'operator': '<'}
+    assert query[4] == {'id': 4072, 'value': '1997', 'operator': '>'}
+
+    assert egenskape_strategy.strategy_type == 'egenskap'
+
+def test_kommune_strategy_list(kommune_strategy):
+
+    kommune_strategy.filters( { 'kommune': ['Haugesund','Karmøy','Sveio','Stavanger','Oslo'] } )
+
+    kommuner = kommune_strategy.query()
+
+    assert kommuner[1] == 1106
+    assert kommuner[2] == 1149
+    assert kommuner[3] == 4612
+    assert kommuner[4] == 1103
+    assert kommuner[5] == 301
+
+    assert kommune_strategy.strategy_type == 'kommune'
+
+def test_fylke_strategy_list(fylke_strategy):
+    
+    fylke_strategy.filters( {'fylke': ['Rogaland', 'Vestland', 'Agder'] } )
+
+    fylker = fylke_strategy.query()
+
+    assert fylker[1] == 11
+    assert fylker[2] == 46
+    assert fylker[3] == 42
+
+    assert fylke_strategy.strategy_type == 'fylke'
+
+def test_vegref_strategy(vegref_strategy):
+    
+    vegref_strategy.filters( {'vegsystemreferanse': ['EV', 'PV', 'RV'] } )
+
+    vegrefs = vegref_strategy.query()
+
+    assert vegrefs[1] == 'EV'
+    assert vegrefs[2] == 'PV'
+    assert vegrefs[3] == 'RV'
+
+    assert vegref_strategy.strategy_type == 'vegsystemreferanse'
+
 def test_uri_egenskap_generator(egenskape_strategy, egenskap_uri_inst):
 
     egenskape_strategy.set_roadobject_type( 470 )
@@ -334,9 +393,16 @@ def test_query_manager(query_manager_inst):
 
     query_manager_inst.set_road_onjecttype( 470 )
 
-    query_manager_inst.filter( {'egenskap': 'Bruksområde = Belysning veg/gate'} )
-    query_manager_inst.filter( {'fylke': 'Oslo'} )
+    query_manager_inst.filter( {'egenskap': 'Type = Radio'} )
+    query_manager_inst.filter( {'egenskap': 'Etableringsår > 1980'} )
+
+    query_manager_inst.filter( {'fylke': 'Rogaland'} )
+    query_manager_inst.filter( {'fylke': 'Vestland'} )
+
     query_manager_inst.filter( {'kommune': 'Haugesund'} )
+
     query_manager_inst.filter( {'vegsystemreferanse': 'KV'} )
 
-    print( len( query_manager_inst.records() ) )
+    # assert len( query_manager_inst.records() ) == 2
+
+    query_manager_inst.records()
