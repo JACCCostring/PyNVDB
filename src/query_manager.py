@@ -1,15 +1,19 @@
-from .consult_manager import ConsultManager
 from .strategies import EgenskapStrategy
 from .strategies import KommuneStrategy
 from .strategies import VegrefStrategy
 from .strategies import FylkeStrategy
 from .strategies import Strategy
 
+from typing import List, Dict
+
 class QueryManager:
 
     def __init__(self, road_objecttype: int = int()) -> None:
         self.___road_objecttype = road_objecttype
-        self.___consult_manager: ConsultManager = ConsultManager()
+
+        self.___strategies: List[ Strategy ] = []
+
+        self.___entries: Dict[ str, List ]= {}
 
         self.___acceptable_queries: dict[str, Strategy] = {
             'egenskap': EgenskapStrategy(),
@@ -19,19 +23,27 @@ class QueryManager:
         }
 
         if self.___road_objecttype is not 0:
+
             self.set_road_onjecttype( self.___road_objecttype )
 
     def set_road_onjecttype(self, road_objecttype: int) -> None:
+        
         if road_objecttype is not 0 and self.___road_objecttype is 0:
+
             self.___road_objecttype = road_objecttype
     
     def add_acceptable_query(self, new_query: dict[str, Strategy]) -> None:
-        if not isinstance(new_query, dict[str, Strategy]):
-            raise Exception('Error: Wrong acceptable query!')
-        
-        if new_query not in self.___acceptable_queries:
-            self.___acceptable_queries.append( new_query )
 
+        if not isinstance(new_query, dict):
+            raise Exception('Error: Wrong acceptable query {}!'.format( type( new_query ) ))
+        
+        for key in new_query.keys():
+            
+            for value in new_query.values():
+
+                self.___acceptable_queries[ key ] = value
+
+        
     def filter(self, query: dict[str, str]) -> None:
         if self.___road_objecttype is 0:
             raise Exception('Error: not road object type assigned yet!')
@@ -40,24 +52,51 @@ class QueryManager:
             
             # checking if there is a valid query
             if query.get( accetable_query ):
-                print('executing...')
+   
+                #if not first coincidence then get the list and append new query
+                if self.___entries.get( accetable_query ):
+                    
+                    #collection for new query data to add to list
+                    new_query: List = []
 
-                #then instantiate strategy
-                strategy_instance = self.___acceptable_queries.get( accetable_query )
+                    entry = self.___entries.get( accetable_query )
+                    
+                    #preparing data
+                    for quer in query.values():
+                        new_query.append( quer )
 
-                #assigning road object type
-                strategy_instance.set_roadobject_type( self.___road_objecttype )
+                    #extending old list values with new values
+                    entry.extend( new_query )
+                    
+                    self.___entries[ accetable_query ] = entry
 
-                #assigning corrsponding filter, until here we are sure that query is valid
-                strategy_instance.filter( query )
-                
-                self.___consult_manager.set_roadobject_type( self.___road_objecttype )
-                #adding strategy to consult manager
-                self.___consult_manager.add_consult( strategy_instance )
+                #if first coincidence then just added
+                if not self.___entries.get( accetable_query ):
 
-    def records(self) -> list:
-        #executing consults
-        self.___consult_manager.execute()
+                    #collection for new query data to add to list
+                    new_query: List = []
+                    
+                    #preparing data
+                    for qu in query.values():
+                        new_query.append( qu )
 
-        #returning a lits of records
-        return self.___consult_manager.records()
+                    self.___entries[ accetable_query ] = new_query
+
+    def execute(self) -> None:
+
+        #transforming from messy to normal filter querys
+        for item_name, item_value in self.___entries.items():
+            # then instantiate strategy
+            strategy_instance = self.___acceptable_queries.get( item_name )
+
+            #setting road object type just in case
+            strategy_instance.set_roadobject_type( self.___road_objecttype )
+            
+            #filtrering            adding key : list of values
+            strategy_instance.filters( { item_name: item_value } )
+
+            #appending new created strat.. to strategy list
+            self.___strategies.append( strategy_instance )
+
+    def strategies(self) -> list:
+        return self.___strategies
