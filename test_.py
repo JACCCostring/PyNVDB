@@ -12,6 +12,7 @@ from src import KommuneUriGenerator
 from src import FylkeUriGenerator
 from src import VegrefUriGenerator
 from src import StrategyBuilder
+from src import QueryManager
 
 import pytest
 
@@ -70,6 +71,10 @@ def vegref_uri_inst():
 @pytest.fixture
 def strategy_builder_instance():
     return StrategyBuilder()
+
+@pytest.fixture
+def query_manager_inst():
+    return QueryManager()
 
 def test_util_enviroment(util_instance):
 
@@ -217,6 +222,65 @@ def test_vegref_strategy(vegref_strategy):
 
     assert vegref_strategy.strategy_type == 'vegsystemreferanse'
 
+
+def test_egenskap_strategy_list(egenskape_strategy):
+
+    egenskape_strategy.set_roadobject_type( 470 )
+
+    egenskape_strategy.filters({'egenskap': [
+        'Type = Radio',
+        'DSRC avlesing != ITS',
+        'Høyde < 0.34',
+        'Etableringsår > 1997'
+    ]})
+
+    query = egenskape_strategy.query()
+
+    assert query[1] == {'id': 3779, 'value': 4822, 'operator': '='}
+    assert query[2] == {'id': 13072, 'value': 22693, 'operator': '!='}
+    assert query[3] == {'id': 3874, 'value': '0.34', 'operator': '<'}
+    assert query[4] == {'id': 4072, 'value': '1997', 'operator': '>'}
+
+    assert egenskape_strategy.strategy_type == 'egenskap'
+
+def test_kommune_strategy_list(kommune_strategy):
+
+    kommune_strategy.filters( { 'kommune': ['Haugesund','Karmøy','Sveio','Stavanger','Oslo'] } )
+
+    kommuner = kommune_strategy.query()
+
+    assert kommuner[1] == 1106
+    assert kommuner[2] == 1149
+    assert kommuner[3] == 4612
+    assert kommuner[4] == 1103
+    assert kommuner[5] == 301
+
+    assert kommune_strategy.strategy_type == 'kommune'
+
+def test_fylke_strategy_list(fylke_strategy):
+    
+    fylke_strategy.filters( {'fylke': ['Rogaland', 'Vestland', 'Agder'] } )
+
+    fylker = fylke_strategy.query()
+
+    assert fylker[1] == 11
+    assert fylker[2] == 46
+    assert fylker[3] == 42
+
+    assert fylke_strategy.strategy_type == 'fylke'
+
+def test_vegref_strategy(vegref_strategy):
+    
+    vegref_strategy.filters( {'vegsystemreferanse': ['EV', 'PV', 'RV'] } )
+
+    vegrefs = vegref_strategy.query()
+
+    assert vegrefs[1] == 'EV'
+    assert vegrefs[2] == 'PV'
+    assert vegrefs[3] == 'RV'
+
+    assert vegref_strategy.strategy_type == 'vegsystemreferanse'
+
 def test_uri_egenskap_generator(egenskape_strategy, egenskap_uri_inst):
 
     egenskape_strategy.set_roadobject_type( 470 )
@@ -296,9 +360,13 @@ def test_consult_manager(consult_instance, egenskape_strategy, kommune_strategy,
     
     records = consult_instance.records()
 
+    #checking that we are getting same uri
     assert consult_instance.main_uri() == uri
+
+    #checking that we are getting only 2 vegobjekter
     assert len (records) == 2
 
+    #checking that we are getting specific vegobjekter nvdbids
     for consult in records:
         assert consult.nvdbid == 893889089 or consult.nvdbid == 893889087
 
@@ -324,3 +392,34 @@ def test_strategy_builder(strategy_builder_instance, fylke_strategy, egenskape_s
 
     assert fylke == '3,11,46'
     assert egenskap == 'egenskap(3779)=4822 AND egenskap(13072)!=22693 AND egenskap(3874)<10 AND egenskap(4072)>1980'
+
+def test_query_manager(query_manager_inst, consult_instance):
+
+    query_manager_inst.set_road_onjecttype( 470 )
+
+    query_manager_inst.filter( {'egenskap': 'Type = Radio'} )
+    query_manager_inst.filter( {'egenskap': 'Etableringsår > 1980'} )
+
+    query_manager_inst.filter( {'fylke': 'Rogaland'} )
+    query_manager_inst.filter( {'fylke': 'Vestland'} )
+
+    query_manager_inst.filter( {'kommune': 'Haugesund'} )
+
+    query_manager_inst.filter( {'vegsystemreferanse': 'KV'} )
+
+    consult_instance.add_query( query_manager_inst )
+
+    consult_instance.execute()
+    
+    uri = 'vegobjekter/470?segmentering=true&egenskap=egenskap(3779)=4822 AND egenskap(4072)>1980&fylke=11,46&kommune=1106&vegsystemreferanse=KV&inkluder=metadata,geometri'
+    
+    records = consult_instance.records()
+
+    assert consult_instance.main_uri() == uri
+
+    #checking that 2 vegobjekter in records
+    assert len( records ) == 2
+
+    #checking that we are getting specific vegobjekter nvdbids
+    for consult in records:
+        assert consult.nvdbid == 893889089 or consult.nvdbid == 893889087
