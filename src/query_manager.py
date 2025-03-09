@@ -22,13 +22,14 @@ class QueryManager:
             'vegsystemreferanse': VegrefStrategy()
         }
 
-        if self.___road_objecttype is not 0:
+        #if not zero then call method for setting road object type
+        if self.___road_objecttype != 0:
 
             self.set_road_onjecttype( self.___road_objecttype )
 
     def set_road_onjecttype(self, road_objecttype: int) -> None:
         
-        if road_objecttype is not 0 and self.___road_objecttype is 0:
+        if road_objecttype != 0 and self.___road_objecttype == 0:
 
             self.___road_objecttype = road_objecttype
     
