@@ -22,13 +22,14 @@ class QueryManager:
             'vegsystemreferanse': VegrefStrategy()
         }
 
-        if self.___road_objecttype is not 0:
+        #if not zero then call method for setting road object type
+        if self.___road_objecttype != 0:
 
             self.set_road_onjecttype( self.___road_objecttype )
 
     def set_road_onjecttype(self, road_objecttype: int) -> None:
         
-        if road_objecttype is not 0 and self.___road_objecttype is 0:
+        if road_objecttype != 0 and self.___road_objecttype == 0:
 
             self.___road_objecttype = road_objecttype
     
@@ -45,7 +46,7 @@ class QueryManager:
 
         
     def filter(self, query: dict[str, str]) -> None:
-        if self.___road_objecttype is 0:
+        if self.___road_objecttype == 0:
             raise Exception('Error: not road object type assigned yet!')
         
         for accetable_query in self.___acceptable_queries:
