@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 import json
 
 class ResourceLoader:
@@ -42,3 +43,15 @@ class ConfigManager:
 
     def load_config(self) -> dict:
         return self.config_content
+
+class EndpointDomain(ABC):
+
+    def __init__(self):
+        self._domain: str = str()
+
+    @abstractmethod
+    def set_domain(self, domain: str) -> None:
+        self._domain = domain
+    
+    def get_domain(self) -> str:
+        return self._domain

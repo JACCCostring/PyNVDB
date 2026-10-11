@@ -7,7 +7,7 @@
         "X-Client": "STDTest-Client"
     },
     "endpoints": {
-        "prod": "https://nvdbapiles-v3.atlas.vegvesen.no/",
-        "test": "https://nvdbapiles-v3.test.atlas.vegvesen.no/"
+        "prod": "https://nvdbapiles.atlas.vegvesen.no/",
+        "test": "https://nvdbapiles.test.atlas.vegvesen.no/"
     }
 }

@@ -46,6 +46,7 @@ class QueryManager:
 
         
     def filter(self, query: dict[str, str]) -> None:
+
         if self.___road_objecttype == 0:
             raise Exception('Error: not road object type assigned yet!')
         
