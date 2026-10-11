@@ -1,7 +1,20 @@
 from .utils_class import UtilEnviroment, ResourceLoader, ConfigManager
+from .utils_class import EndpointDomain
 import requests
 import json
 import os #for path
+
+class CatalogDomain(EndpointDomain):
+
+    def __init__(self):
+        super().__init__()
+
+    def set_domain(self, domain) -> None:
+        self._domain = domain
+
+    # def get_domain(self):
+    #     return self._domain
+        
 
 class Datacatalog:
 
@@ -9,6 +22,10 @@ class Datacatalog:
 
         self.___environ: UtilEnviroment = UtilEnviroment() #private
         self.___filepath: str = str() #private
+        
+        self._catalog_domain = CatalogDomain()
+
+        self._catalog_domain.set_domain('datakatalog/api/v1')
 
     #private method, for internal uses
     def ___get_d(self, endpoint: str, pars: dict = {}) -> requests.Response:
@@ -27,6 +44,8 @@ class Datacatalog:
         exist_file = os.path.exists( filename )
 
         params = {'inkluder': 'egenskapstyper'}
+
+        # print('======endpoint: ', endpoint)
 
         if exist_file == False:
             
@@ -47,13 +66,19 @@ class Datacatalog:
     #this method return true if catalog version is diff
     def check_version(self) -> bool:
 
-        endpoint = self.___environ.env + 'status'
+        # endpoint = self.___environ.env + 'status'
+        endpoint = self.___environ.env + self._catalog_domain.get_domain() + '/versjon'
 
         r = self.___get_d( endpoint )
 
+        # print(" ==============: ", r.json())
+        # print('endpoint', endpoint)
+
         if r.ok:
 
-            cat_api_version = r.json()['datagrunnlag']['datakatalog']['versjon']
+            cat_api_version = r.json()['versjon']
+
+            # print(" ==============: ", cat_api_version)
 
             if cat_api_version == ConfigManager().load_config().get('catalog_version'):
                 return False # if same version

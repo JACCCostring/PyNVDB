@@ -52,7 +52,12 @@ class NVDB_REST_Paginator:
 
         first_pag = await self.___first_pagination()
 
-        self.___page_amount = first_pag['antall']
+        # print('======endpoint: ', self.___start_endpoint)
+        # print('=====first page:', first_pag, 'size: ', len(first_pag))
+
+        # self.___page_amount = first_pag['antall']
+        self.___page_amount = len( first_pag )
+
         # self.___current_amount = 1000 if first_pag['returnert'] <= 1000 else first_pag['returnert']
         self.___current_amount = first_pag['returnert']
 

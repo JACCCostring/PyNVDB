@@ -91,8 +91,8 @@ def test_config_manager(config_manager):
     assert config_manager.load_config().get('test_headers') == {"X-Client": "STDTest-Client"}
 
     assert config_manager.load_config().get('endpoints') == {
-        "prod": "https://nvdbapiles-v3.atlas.vegvesen.no/",
-        "test": "https://nvdbapiles-v3.test.atlas.vegvesen.no/"
+        "prod": "https://nvdbapiles.atlas.vegvesen.no/",
+        "test": "https://nvdbapiles.test.atlas.vegvesen.no/"
     }
 
 def test_catalog_download_to_file_and_resources(catalog_instance, config_manager):
