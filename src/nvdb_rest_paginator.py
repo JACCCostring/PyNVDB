@@ -1,6 +1,6 @@
 from .utils_class import ConfigManager
 from dataclasses import dataclass
-import asyncio.format_helpers
+# import asyncio.format_helpers
 import asyncio
 import aiohttp
 
@@ -16,7 +16,7 @@ class NVDB_REST_Paginator:
     def __init__(self, start_endpoint: str) -> None:
 
         self.___start_endpoint: str = start_endpoint
-        self.___page_amount: int = int() #will be discovered later after first fetch
+        # self.___page_amount: int = int() #will be discovered later after first fetch
         self.___current_amount: int = int() #start amount for pagination after first fetch
         self.___records: list = []
 
@@ -52,16 +52,22 @@ class NVDB_REST_Paginator:
 
         first_pag = await self.___first_pagination()
 
-        # print('======endpoint: ', self.___start_endpoint)
-        # print('=====first page:', first_pag, 'size: ', len(first_pag))
+        yet_amount: int = 0
 
-        # self.___page_amount = first_pag['antall']
+        next_endpoint: str = str()
+
         self.___page_amount = len( first_pag )
 
-        # self.___current_amount = 1000 if first_pag['returnert'] <= 1000 else first_pag['returnert']
         self.___current_amount = first_pag['returnert']
 
-        next_endpoint = first_pag['neste']['href']
+        split_first_case = first_pag['neste']['href'].split('&')
+        
+        first_amount = split_first_case[len(split_first_case) - 1].split('=')[1]
+
+        if self.___current_amount == first_amount:
+            next_endpoint = first_pag['neste']['href']
+
+        next_endpoint = self.___start_endpoint + f'&antall={self.___current_amount}'
 
         '''
             some times return data amount and total data amaount
@@ -71,22 +77,10 @@ class NVDB_REST_Paginator:
             since we dont need to fetch next endpoint because we're only getting
             800 or less amount
         '''
-        if self.___current_amount <= 800:
-            next_endpoint = self.___start_endpoint
-
-        print()
-        print('starting ...')
-
-        print('fetching', self.___page_amount, 'vegobjekter')
-
+        
         async with aiohttp.ClientSession() as session:
 
-            for _ in range( int( self.___page_amount / self.___current_amount ) ):
-                
-                #only show stats each 1000 fetched road objects
-                if self.___current_amount % 1000 == 0:
-
-                    print(self.___current_amount, ' of ', self.___page_amount)
+            while self.___current_amount >= yet_amount:
 
                 task = asyncio.create_task( self.___getandparse_nvdb_data(next_endpoint, session) )
                 
@@ -96,17 +90,18 @@ class NVDB_REST_Paginator:
 
                 next_endpoint = next_pag['neste']['href']
 
-                # self.___current_amount += 1000 if first_pag['returnert'] <= 1000 else first_pag['returnert']
+                splitted = next_endpoint.split('&')
+                yet_amount += int( splitted[len(splitted) - 1].split('=')[1] )
+
                 self.___current_amount += next_pag['returnert']
-
-                # print(next_endpoint)
                 
-            print('ending fetch ...')
-            responses_coro = await asyncio.gather( *tasks )
+                if yet_amount > self.___current_amount:
+                    break
 
-            print('processing ...')
-            for response in responses_coro:
-                self.___populate_nvdb_data( response )
+                responses_coro = await asyncio.gather( *tasks )
+
+                for response in responses_coro:
+                    self.___populate_nvdb_data( response )
 
     async def ___first_pagination(self) -> None:
         async with aiohttp.ClientSession() as session:

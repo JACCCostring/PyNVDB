@@ -17,6 +17,10 @@ class ConsultManager:
 
     def add_consult(self, consult: Strategy) -> None:
 
+        if self.___road_object_type_id == 0:
+
+            self.set_roadobject_type( consult._roadobjecttype )
+
         if isinstance(consult, Strategy):
             self.___consults.append( consult )
 
@@ -24,6 +28,12 @@ class ConsultManager:
             raise Exception('error: Wrong strategy type not supported')
     
     def add_query(self, query_manager: QueryManager) -> None:
+
+        #case when attempting to add a query without setting object type id
+        if self.___road_object_type_id == 0:
+
+            self.set_roadobject_type( query_manager.road_object_type_id() )
+
         #executing all queries to generate strategies
         query_manager.execute()
 
@@ -38,7 +48,7 @@ class ConsultManager:
     def set_roadobject_type(self, type: int) -> None:
 
         if self.___road_object_type_id == 0:
-
+            
             self.___road_object_type_id = type
 
             '''
@@ -111,10 +121,6 @@ class ConsultManager:
 
             self.___uris_completed.append( {'uri': uri, 'type': consult.strategy_type } )
 
-            if self.___road_object_type_id == 0:
-
-                self.___road_object_type_id = consult._roadobjecttype
-
         '''
             substract main URI and store it, for later and making
             sure that self.___main_uri will be only filled if
@@ -135,8 +141,8 @@ class ConsultManager:
         #base url segments are True by default, it can changes later
         base_url: str = f'vegobjekter/{self.___road_object_type_id}?segmentering=true&'
         
-        if self.___road_object_type_id == 0:
-            raise Exception('Error: road object type must be set in one of the strategies or in Consult Manager')
+        # if self.___road_object_type_id == 0:
+        #     raise Exception('Error: road object type must be set in one of the strategies or in Consult Manager')
         
         #if it has uris
         if len(self.___uris_completed) > 0:
@@ -160,16 +166,36 @@ class ConsultManager:
                 uri_result += uri_item + '&'
             
             return uri_result.rstrip('&') + '&inkluder=metadata,geometri' #including metadata and geometry
-        
+
         #if not then raise exception
-        if len(self.___uris_completed) and self.___road_object_type_id == 0:
+        if len(self.___uris_completed) == 0 and self.___road_object_type_id == 0:
             raise Exception('Error: not consult to process!')
 
+        
+        #case when self.___consults and self.___uris_completed are empty
+        return f'vegobjekter/{self.___road_object_type_id}?inkluder=metadata,geometri' #including metadata and geometry
+        
+        
     def records(self) -> list:
 
         if self.___main_uri != '':
 
             endpoint: str = self.___environ.env + self.___main_uri
+
+            #case when consult is empty
+            if len( self.___consults ) == 0:
+
+                self.set_roadobject_type( self.___road_object_type_id )
+
+                self.___main_uri = self.___substract_uri()
+
+                endpoint = self.___environ.env + self.___main_uri
+                
+                endpoint = endpoint.removesuffix('&')
+
+            #case when road object type id is not set yet
+            if self.___road_object_type_id == 0:
+                raise Exception('road object type id must be set!')
 
             nvdb_paginator = NVDB_REST_Paginator( endpoint )
             

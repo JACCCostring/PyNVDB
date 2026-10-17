@@ -32,7 +32,7 @@ class QueryManager:
         if road_objecttype != 0 and self.___road_objecttype == 0:
 
             self.___road_objecttype = road_objecttype
-    
+
     def add_acceptable_query(self, new_query: dict[str, Strategy]) -> None:
 
         if not isinstance(new_query, dict):
@@ -48,7 +48,8 @@ class QueryManager:
     def filter(self, query: dict[str, str]) -> None:
 
         if self.___road_objecttype == 0:
-            raise Exception('Error: not road object type assigned yet!')
+            
+            raise Exception('Error: not road object type id assigned yet!')
         
         for accetable_query in self.___acceptable_queries:
             
@@ -88,6 +89,7 @@ class QueryManager:
 
         #transforming from messy to normal filter querys
         for item_name, item_value in self.___entries.items():
+
             # then instantiate strategy
             strategy_instance = self.___acceptable_queries.get( item_name )
 
@@ -101,4 +103,9 @@ class QueryManager:
             self.___strategies.append( strategy_instance )
 
     def strategies(self) -> list:
+
         return self.___strategies
+
+    def road_object_type_id(self) -> int:
+
+        return self.___road_objecttype
