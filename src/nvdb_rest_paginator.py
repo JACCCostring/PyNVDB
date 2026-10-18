@@ -9,6 +9,7 @@ class RoadObject:
     nvdbid: int
     version: int
     last_modified: str
+    name: str
     geometry: str
 
 class NVDB_REST_Paginator:
@@ -35,11 +36,20 @@ class NVDB_REST_Paginator:
 
         for item in data['objekter']:
 
-            object = RoadObject( nvdbid=item['id'], version=item['metadata']['versjon'], 
-                                last_modified=item['metadata']['sist_modifisert'],
-                                geometry=item['geometri']['wkt']  )
-            
-            self.___records.append( object )
+            # object = RoadObject( nvdbid=item['id'], version=item['metadata']['versjon'], 
+            #                     last_modified=item['metadata']['sist_modifisert'],
+            #                     geometry=item['geometri']['wkt']  )
+            try:
+
+                object = RoadObject(    nvdbid=item['id'], version=item['metadata']['versjon'], 
+                                        last_modified=item['metadata']['sist_modifisert'],
+                                        name=item.get('metadata').get('type').get('navn'),
+                                        geometry=item.get('geometri').get('wkt') 
+                                    )
+                
+                self.___records.append( object )
+            except AttributeError as ex:
+                print('exception: ', ex)
 
     async def ___getandparse_nvdb_data(self, endpoint, session) -> None:
 
